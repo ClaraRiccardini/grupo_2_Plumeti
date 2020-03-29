@@ -1,0 +1,42 @@
+PUNTEO PARA POWER POINT
+Diapositiva 1: Grupo 2 - Trabajo integrador - Plumeti
+
+Diapositiva 2: Market Place: temática, audiencia y oferta. 
+Para el trabajo integrador en nuestro grupo decidimos tomar una marca ya 
+existente de uno de los miembros en la cual se comercializan productos de diseño, 
+más específicamente pañuelos de diferentes medidas y hacerle una renovación. 
+Nombramos al proyecto "Plumeti".
+
+Diapositiva 3:Audiencia y público deseado.
+Nuestro audiencia objetivo serán mujeres de entre 20 a 45 años que esten interesadas en diferenciarse utilizando accesorios originales. 
+Apunta a un público que disfruta de salir y la vida al aire libre, que no teme distinguirse por lo que usa, que consume 
+productos innovadores y de diseño para poder encontrar un estilo distinto.
+Otras marcas que consume: Prune, Desiderata, Wanama, Portsaid.
+palabras clave: Color - Innovación - Originalidad - Disfrute - Diferenciarse - Modernidad.
+(Insertar imagenes de las mujeres a quienes apuntamos, palabras clave y todo lo que ayude a "visualizar" al usuario)
+
+Diapositiva 4: Comunicación de marca.
+Elegimos una paleta de colores desaturada que complemente fácilmente con los colores fuertes de los estampados.
+Optamos por una paleta con colores de destaque en tonos pasteles y siendo los colores principales blanco y negro para mayor contraste.
+El logo ya estaba provisto por la marca pautada, se le hizo una adaptación a la nueva paleta.
+(Insertar paleta de colores con codigo hexadecimal y logo)
+
+Diapositiva 5: Idea para ecommerce.
+Para ajustar nuestra oferta al público que hemos definido como nuestro target realizamos un sitio web 
+que tenga facilidades para el usuario, con un sitio amigable para la compra, sin la aparición de 
+ventanas excesivas y con una propuesta clara en cuanto a diseño y distribución de los componentes.
+
+Nuestro sitio esta compuesto por las siguientes partes:
+
+Diapositiva 6: Home. (Comentar menu fijo, carrusel de imagenes, posibilidad de ver productos moviendo las 
+flechas, footer con datos, banner)(Mostrar, comentar)
+Diapositiva 7: Login, cambio de contraseña e historial del comprador. (Memoria de direcciones y tarjetas,
+posibilidad de cambiar contraseña, ver compras anteriormente realizadas)
+Diapositiva 8: Productos. (Imagenes de buen tamaño para mostrar los productos, bordes redondeados, precios
+dentro de la imagen para ocupar menos espacio, menu slider para que sea mas facil de ver)
+Diapositiva 9: Productos detalle, 1 y 2. (Imagenes de complemente, descripcion, posibilidad de dejar 
+comentarios)
+Diapositiva 10: Carrito (Vista clara de compra final, posibilidad de añadir)
+Diapositiva 11: Carrito fin de compra (Vista clara de los datos cargados, posibilidad de cambiarlos, composición de la compra)
+Diapositiva 12: Administrador de productos (Facil de usar, carga rapida)
+Diapositiva 13: Cierre(Componentes del grupo)

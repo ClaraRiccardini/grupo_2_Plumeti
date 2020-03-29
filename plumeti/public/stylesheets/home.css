@@ -1,0 +1,42 @@
+/* TODO ESTILO CLASE O ID DEBE INICIAR CON LA ETIQUETA.CLASE section.container, menos el banner n los metodos de pagos*/
+
+section.container{
+    padding: 50px 0 50px 0;
+}
+section.container  h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+section.container .listaProductosDestacados , .listaProductosNuevos{
+    width: 100%;
+    height: 300px;
+    margin: 50px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+section.container .listaProductosDestacados img , .listaProductosNuevos img{
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #909090;
+}
+#banner , #metodosDePago{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#banner{
+    background-image: url('/images/slider1.jpeg');
+}
+#banner h3 , #metodosDePago h3{
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+}
+#banner h3{
+    color:white;
+}

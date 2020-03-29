@@ -6,10 +6,17 @@
 
     <!-- Archivos CSS -->
     <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
 
     <!-- Archivos javascript -->
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
@@ -34,16 +41,69 @@
         </div>
     </nav>
     <!-- Hasta aca llega el menu de navegacion -->
+    <header>
+        <!-- Aca comienza el header/carousel-->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="/images/slider1.jpeg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/slider2.jpeg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="/images/slider3.jpeg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
+    </header>
+
+    <section class="container">
+    <!-- Aca comienza lista de productos destacados -->
+        <div class="productosDestacados">
+            <h2>Productos Destacados</h2>
+
+            <div class="listaProductosDestacados">
+                <img src="/images/slider1.jpg" alt="">
+                <img src="/images/slider2.jpg" alt="">
+                <img src="/images/slider3.jpg" alt="">
+            </div>
+        </div>    
     
-   <!-- Aca comienza el header/carousel-->
+    <!-- Aca comienza lista de productos nuevos -->
+    <div class="productosNuevos">
+        <h2>Productos Nuevos</h2>
 
-   <!-- Aca comienza lista de productos destacados -->
-
-   <!-- Aca comienza lista de productos nuevos -->
-
-   <!-- Aca va un banner -->
-
-   <!-- Aca van los metodos de pago -->
+        <div class="listaProductosNuevos">
+            <img src="/images/slider1.jpg" alt="">
+            <img src="/images/slider2.jpg" alt="">
+            <img src="/images/slider3.jpg" alt="">
+        </div>
+    </div>    
+    </section>
+    
+    <!-- Aca va un banner -->
+    <div id="banner">
+        <h3>30% OFF desde el 10 de marzo <br> hasta el 20 de abril</h3>
+    </div>
+    
+    <!-- Aca van los metodos de pago -->
+    <div id="metodosDePago">
+        <h3>Aca van los metodos de pagos disponibles</h3>
+    </div>
 
     <!-- Hoja de estilo para el footer footer.css -->
     <footer>

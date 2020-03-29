@@ -1,0 +1,61 @@
+/* TODO ESTILO CLASE O ID DEBE INICIAR CON LA ETIQUETA FOOTER */
+
+footer{
+    width: 100%;    
+    background-color: #e9dfcf;
+    padding: 50px 0 50px 0;
+}
+footer h2#contact{
+    padding: 0 0 50px 0;
+    font-size: 50px;
+    text-align: center;
+    color:#a9746b;
+}
+footer .footerSeparator{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+footer .footerSeparator #left, #right{
+    width: 100%;
+    height: 300px;
+    *background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .footerSeparator form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 300px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+footer .footerSeparator form input, textarea{
+    width: 90%;
+    margin: 10px;
+    background-color: #f7f7f7;
+    border: none;
+    outline: none;
+    resize: none;
+}
+footer .footerSeparator form input#enviar{
+    cursor: pointer;
+    color:#a9746b;
+    text-align: center;
+    width: 80px;
+}
+footer .footerSeparator #right ul li{
+    list-style: none;
+    padding: 10px;
+}
+footer .footerSeparator #right ul li a{
+    text-decoration: none;
+    color:#a9746b;
+}
+footer .footerSeparator #right ul li a i{
+    margin-right: 10px;
+}

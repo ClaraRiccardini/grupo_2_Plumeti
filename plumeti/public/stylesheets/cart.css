@@ -1,0 +1,45 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+};
+
+section.container {
+        padding: 50px 0 50px 0;
+        width: 100%;
+        margin: auto;
+    };
+
+section.container.tabla {
+width: 1000px;
+border: 1px solid #999;
+text-align: center;}
+
+
+.tabla{
+    margin: 10%;
+    
+}
+
+td, th {
+padding-top: 50px;
+        padding: 20px;
+        text-align: left;
+        color: grey
+     }
+
+th, td {
+    padding-top: 50px;
+    padding-bottom: 50px;
+        border-bottom: 1px solid #999;
+        width: 100%;
+        text-align: center;
+        color: grey;
+     }
+
+tr:hover {
+background-color: whitesmoke;
+     }
+     caption {
+        font-weight: bold;
+        font-style: italic;
+     }
+

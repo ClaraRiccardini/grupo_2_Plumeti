@@ -1,0 +1,135 @@
+*{
+padding:0;
+margin:0;   
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#contenedorGeneral{
+    width: 100%;
+    height: 50hv;
+    display: flex;
+}
+
+section.container{
+overflow: hidden;
+}
+section.container #left{
+    display: flex;
+    margin-top: 2%;
+    height: 50vh;
+    width:32%;
+    float: left;
+    margin-right:4%;
+    align-items: center;
+} 
+
+section.container #left .carousel-inner img {
+    border-radius: 10px;
+}
+
+ 
+section.container #right{
+    display: flex;
+margin-top: 2%;
+margin-left:4%;
+height: 50vh;
+width: 60%;
+font-size: 3vh;
+float: left;
+color: grey;
+}
+section.comentarios{
+align-items: center;
+width: 100%;
+height: 15vh;
+margin-top: 5%;
+margin-bottom: 5%;
+margin-left: 8%;
+margin-right: 8%;
+}
+
+section.comentarios h3{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 3.5vh;
+};
+
+.textarea{
+    align-items: center;
+    width: 90%;
+    background-color: #f7f7f7;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.botones{
+    width: 100%;
+    *background-color: red;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-left: 45%;
+}
+
+.boton_1{
+text-decoration: none;
+text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: #e9d6c2;
+    padding: 5px;
+    border-radius: 8px 8px 8px 8px;
+-moz-border-radius: 8px 8px 8px 8px;
+-webkit-border-radius: 8px 8px 8px 8px;
+border: 2px solid #e9d6c2;
+}
+
+.boton_1:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.boton_2{
+    margin-left: 10%;
+    text-decoration: none;
+text-align: center;
+    font-size: 20px;
+    color: #e9d6c2;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 2px solid #e9d6c2;
+
+}
+
+.boton_2:hover{
+font-weight: bold;
+    color: #e9d6c2;
+}
+
+.publicados{
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
+
+}
+.publicados h4 {
+    font-size: 2.5vh;
+    font-weight: 300;
+    line-height: 1vh;
+}
+
+.publicados h6 {
+    font-size: 2vh;
+    font-weight: 100;
+    line-height: 1vh;
+
+}

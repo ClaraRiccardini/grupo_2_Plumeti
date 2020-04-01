@@ -18,4 +18,9 @@ router.get('/cart', function(req, res, next) {
     res.render('cart', { title: 'Express' });
 });
 
+
+router.get('/detail', function(req, res, next) {
+    res.render('Detail', { title: 'Express' });
+});
+
 module.exports = router;

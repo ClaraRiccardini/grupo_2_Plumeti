@@ -13,7 +13,6 @@ a{
     text-decoration: none;
 }
 .relleno{
-    position: relative;
     width: 100%;
     height: 70px;
 }
@@ -83,6 +82,5 @@ nav .navContainer a i.fa-shopping-cart{
     font-size: 20px;
 }
 nav .navContainer ul li a:hover{
-    font-weight: bold;
     color:#e9dfcf;
 }

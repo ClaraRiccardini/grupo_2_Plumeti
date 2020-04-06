@@ -1,0 +1,132 @@
+.container{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+}
+.container .left{
+    width: 20%;
+    height: 80vh;
+}
+.container #left{
+    width: 20%;
+    height: 100vh;
+    background: #f7f7f7;
+    padding: 50px 0 0 0;
+    text-align: center;
+    position: fixed;
+}
+.container #left #profile-image{
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.container #left #profile-image p{
+    color: white;
+}
+.container #left ul li{
+    margin:20px 0;
+}
+.container #left ul li:nth-child(2) a{
+    color: #0077cc;
+}
+.container #left ul li a{
+    transition: .3s;
+}
+.container #left ul li a:hover{
+    color:#707070;
+}
+#right{
+    width: 80%;
+    position: relative;
+}
+#right h2.h2{
+    padding: 100px 0 30px 50px;
+}
+.container .datosPersonales{
+    width: 100%;
+    display: flex;
+}
+.container .datosPersonales .dato{
+    padding: 30px 0 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 33.3%;
+}
+.container .datosPersonales .dato label{
+    padding: 0 0 10px 0;
+}
+.container .datosPersonales .dato input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #707070;
+    width: 50%;
+    background-color: transparent;
+    padding: 5px 0 ;
+}
+#right .payment{
+    display: flex;
+    padding: 50px 0;
+}
+#right h4{
+    padding: 0 0 0 100px;
+    color:#909090;
+    cursor: pointer;
+}
+#right .payment .tarjeta{
+    width: 30%;
+    height: 200px;
+    margin: 0 10%;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 0 0 50px;
+    position: relative;
+}
+#right .payment .tarjeta span{
+    padding: 5px 0;
+    color: #909090;
+}
+#right .payment .tarjeta a{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+#right .payment .tarjeta a i{
+    color:#909090;
+}
+#right #direcciones{
+    padding: 0 0 50px 50px;
+}
+#right .direccion{
+    padding: 30px 0 0 50px;
+}
+#right .direccion i{
+    padding: 0 5px;
+    cursor: pointer;
+}
+#right button{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    background-color: #e9dfcf;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 50px;
+    cursor: pointer;
+}

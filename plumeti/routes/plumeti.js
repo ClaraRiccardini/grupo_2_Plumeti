@@ -30,4 +30,8 @@ router.get('/login', function(req, res, next) {
     res.render('login', { title: 'Express' });
 });
 
+router.get('/admproducts', function(req, res, next) {
+    res.render('admproducts', { title: 'Express' });
+});
+
 module.exports = router;

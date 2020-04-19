@@ -1,115 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Archivos CSS -->
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/cart.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
+	<!-- Archivos javascript -->
+	<script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
 
-    <!-- Archivos javascript -->
-    <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
+	<!-- BOOTSTRAP -->
 
-<!-- BOOTSTRAP -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Carrito</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+	<!-- Archivos CSS -->
+	<link rel="stylesheet" href="/stylesheets/navbar.css">
+	<link rel="stylesheet" href="/stylesheets/cart.css">
+	<link rel="stylesheet" href="/stylesheets/footer.css">
+
+	<title>Carrito</title>
 </head>
 
 <body>
-<div class="relleno"></div>
-<nav>
-	<div class="navContainer">
-		<a href="/home">
-			<img id="logo" src="/images/logo.svg" alt="">
-		</a>
-		<input id="buscador" type="search" value="" placeholder="Buscar">
 
-		<ul>
-			<li><a href="/home">Inicio</a></li>
-			<li><a href="/profile">Perfil</a></li>
-			<li><a href="/products">Productos</a></li>
-		</ul>
-		<a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-	</div>
-</nav>
-<section class="container">
-	<div class="tabla">
-	<table>
-			<tr>
-			<th></th>
-			<th style="text-align: center;">PRODUCTO</th>
-			<th>CANTIDAD</th>
-			<th>PRECIO</th>
-			<th>TOTAL</th>
-			<th>ELIMINAR</th>
-			</tr>
-			<tr>
-			<td><img src="/images/Boquitas pintadas mostrado.heic" alt=""></td>
-			<td>Pañuelo Boquitas</td>
-			<td>1</td>
-			<td>$720</td>
-			<td>$720</td>
-			<td><a href="#" class="fas fa-trash-alt" id="icono" style="color: #9b736c;"></a> </td>
-			</tr> 
-			<td><img src="/images/Boquitas pintadas mostrado.heic" alt=""></td>
-			<td>Pañuelo Boquitas</td>
-			<td>1</td>
-			<td>$720</td>
-			<td>$720</td>
-			<td><a href="#" class="fas fa-trash-alt" id="icono" style="color: #9b736c;"></a> </td>
-			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td><strong>$1440</strong></td>
-			<td></td>
-			</tr> 
-		</table>
-	</div>	
-</section>
+	<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 m-0 shadow">
+		<div class="container">
+			<div class="navbar-brand">
+				<img src="/images/logo.svg" height="40px" alt="">
+			</div>
+
+			<i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
+
+			<div class="collapse navbar-collapse" id="menu">
+
+				<input class="form-control " type="text" placeholder="Search" aria-label="Search">
 
 
-<footer>
-	<h2 id="contact">Contactanos</h2>
-
-	<div class="footerSeparator">
-		<div id="left">
-			<form action="index.html" method="POST">
-				<input type="text" id="nombre" placeholder="Nombre">
-				<input type="tel" id="telefono" placeholder="Telefono">
-				<input type="email" id="correo" placeholder="Correo">
-				<textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
-				<input type="submit" id="enviar" value="Enviar">
-			</form>
+				<ul class="navbar-nav ml-auto">
+					<li class="navbar-item mx-1">
+						<a href="/home" class="nav-link">Inicio</a>
+					</li>
+					<li class="navbar-item mx-1">
+						<a href="/profile" class="nav-link">Perfil</a>
+					</li>
+					<li class="navbar-item mx-1">
+						<a href="/products" class="nav-link">Productos</a>
+					</li>
+					<li class="navbar-item mx-1">
+						<a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+					</li>
+				</ul>
+			</div>
 		</div>
-
-
-		<div id="right">
-			<ul>
-				<li><a href="https://www.instagram.com/plumetiTEXTIL/"><i class="fab fa-instagram"></i> 
-					PlumetiTEXTIL
-				</a></li>
-
-				<li><a href="https://www.facebook.com/PlumetiDeco/"><i class="fab fa-facebook-square"></i> 
-					PlumetiDeco
-				</a></li>
-
-				<li><a href="mailto:clariric@gmail.com"><i class="fas fa-envelope"></i> 
-					clariric@gmail.com
-				</a></li>
-				
-				<li><a href="https://api.whatsapp.com/send?phone=5491167467772&text=&source=&data="><i class="fab fa-whatsapp"></i> 
-					+54 9 11 6746-7772
-				</a></li>
-			</ul>
+	</nav>
+	<div class="relleno"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center">
+			<section id="tabla" class="col-12 d-flex align-items-center">
+				<img class="col-2" src="/images/boquitas pintadas mostrado.HEIC" alt="BOQUITAS PINTADAS">
+				<span class="col-3">BOQUITAS PINTADAS</span>
+				<span class="col-4">                                <div id="botonModificar" class="btn-group mr-2 .btn-group-*" role="group" aria-label="Second group">
+					<button id="boton" type="button" class="btn btn-secondary">-</button>
+					<button id="boton" type="button" class="btn btn-secondary">1</button>
+					<button id="boton" type="button" class="btn btn-secondary">+</button>
+				</div>
+			</span>
+			<span class="col-2">$300</span>
+			<span class="col-1"><a href="#" class="fas fa-trash-alt" id="icono" style="color:black;"></a></span>
+			</section>
 		</div>
-	</div>
-</footer>
+		<div class="row d-flex align-items-center">
+			<section id="tabla" class="col-12 d-flex align-items-center">
+				<img class="col-2" src="/images/boquitas pintadas mostrado.HEIC" alt="BOQUITAS PINTADAS">
+				<span class="col-3">BOQUITAS PINTADAS</span>
+				<span class="col-4">                                <div id="botonModificar" class="btn-group mr-2 .btn-group-*" role="group" aria-label="Second group">
+					<button id="boton" type="button" class="btn btn-secondary">-</button>
+					<button id="boton" type="button" class="btn btn-secondary">1</button>
+					<button id="boton" type="button" class="btn btn-secondary">+</button>
+				</div>
+			</span>
+			<span class="col-2">$300</span>
+			<span class="col-1"><a href="#" class="fas fa-trash-alt" id="icono" style="color:black;"></a></span>
+			</section>
+		</div>
+		<div class="row d-flex align-items-center">
+			<section id="tabla" class="col-12 d-flex align-items-center">
+				<img class="col-2">
+				<span class="col-3"></span>
+				<span class="col-4"></span>
+			<span class="col-2">$300</span>
+			<span class="col-1"></span>
+			</section>
+		</div>
+	
+	
+	
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"></script>
 </body>
+
 </html>

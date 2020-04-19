@@ -1,103 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji+2&display=swap');
+
 *{
-padding:0;
-margin:0;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Baloo Paaji 2';
+    letter-spacing: 3px;
+    color:#404040;
 }
-
-#contenedorGeneral{
-    width: 100%;
-    overflow: hidden;
-}
-
-    #contenedorGeneral #left{
-    float:left;
-    width: 20%;
-    background-color:#f7f7f7;
-    height: 100vh;
-
-    }
-    #contenedorGeneral #left .navBar{
-            width: 100%;
-            margin-top: 2vw;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-end;
-            color: #909090;
-            padding-left: 20px;
-        }
-
-    #contenedorGeneral #left .navBar a{
-            list-style: none;
-            text-decoration: none;
-            color: #909090;
-
-        }
-
-    #contenedorGeneral #left .navBar a:hover{
-        font-weight: bold;
-        color:#e9dfcf;
-        text-decoration: underline;
-    }
-
-
-    #contenedorGeneral #left .navBar a li{
-            padding-top: 10px;
-            width: 70px;
-            transition: .3s;
-        }
-
-    #contenedorGeneral #left .navBar a li:hover{
-        padding-left: 10px;
-    }
-
-
-#contenedorGeneral #right{
-float:left;
-height: 100vh;
-width:75%;
+.navBar{
+    background-color: #E9DFCF;
+    padding-top:2rem;
+    justify-content:center;
+    height: 100%;
 
 
 }
 
-#right .product-container {
-width: 100%;
+.navBar ul{
+    font-size: 3vh;
+justify-content: center;}
+
+.navBar ul a{
+    font-size:3vh;
+    color:#909090;
+    transition: .3s;
+
+
 }
 
-#right .product-container .producto{
-width: 30%;
-float: left;
-align-items: center;
-margin-left:2%;
-
-}
-
-#right .product-container .producto .main-photo{
-width:100%;
-border-radius: 10px;
-box-shadow: 0 0 10px #909090;
-align-items: center;
-}
-
-#right .product-container .producto h2 {
-position: relative;
-bottom:40px;
-font-size: 20px;
-color:white;
-padding-left:10px;
-font-weight: bold;
+.navBar ul a:hover{
+color:black;
 text-decoration: none;
-text-decoration-line: none;
 }
-
-#right .product-container .producto a{
-    text-decoration: none;
-text-decoration-line: none;
-}
-
-
-#right .product-container .producto h2:hover {
-    text-decoration-line: none;
-    color:black;
-    text-decoration: none;
-    font-style: italic;
+.container{
+    display: flex;
 }

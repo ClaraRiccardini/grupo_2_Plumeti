@@ -1,0 +1,28 @@
+#left{
+    background-color: #f7f7f7;
+}
+
+.left .foto-perfil{
+    width: 13rem;
+    height: 13rem;
+    background-image: url('/images/añadir-foto.png');
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+.left .foto-perfil:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ddd;
+}
+#left .left{
+    _position: fixed;
+}
+
+#right .right{
+    _height: 200vh;
+}
+#left .left .nav-profile ul li:nth-child(1) a{
+    _color: #0077cc;
+
+}

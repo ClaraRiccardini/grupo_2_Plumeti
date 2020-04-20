@@ -1,51 +1,16 @@
-.container #left ul li:nth-child(2) a{
-    color: #000;
+
+#right .right .product-record .product-img{
+    width: 4.5rem;
+    height: 4.5rem;
 }
-.container #left ul li:nth-child(1) a{
-    color: #0077cc;
+#right .right .product-record .product-img img{
+    width: 100%;
 }
-#right #filter{
-    position: absolute;
-    top: 50px;
-    left: 100px;
+#right .right .product-record{
+    border-radius: 0.5rem;
 }
-select{
-    width: 100px;
-    background-color: #f7f7f7;
-    border: none;
-}
-#productsRecord{
-    padding: 30px 50px;
-}
-#productsRecord .productRecord{
-    height: 100px;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 0 0 5px #909090;
-    display: flex;
-    justify-content: space-around;
-}
-.image{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-}
-.image img{
-    height: 100%;
-}
-.name , .price , .date {
-    width: 250px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.name span, .price span, .date span{
-    margin: 5px;
-    color: #909090;
-}
-.name span:nth-child(1), .price span:nth-child(1), .date span:nth-child(1){
-    font-weight: bold;
-    color: black;
+#right .right select{
+    width: 10rem;
+    border: 1px solid #ccc;
+    outline: none;
 }

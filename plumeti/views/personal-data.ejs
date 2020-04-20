@@ -4,116 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/profile-personal-data.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- scripts -->
+    <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
-    <title>Perfil</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/profile-left.css">
+    <link rel="stylesheet" href="/stylesheets/profile-personal-data.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+
+    <title>Home</title>
 </head>
 <body>
 
-        <!-- Hoja de estilo para el nav navbar.css -->
-        <div class="relleno"></div>
-        <nav>
-            <div class="navContainer">
-                <a href="/home">
-                    <img id="logo" src="/images/logo.svg" alt="">
-                </a>
-                <input id="buscador" type="search" value="" placeholder="Buscar">
-    
-                <ul>
-                    <li><a href="/home">Inicio</a></li>
-                    <li><a href="/profile">Perfil</a></li>
-                    <li><a href="/products">Productos</a></li>
-                </ul>
-                <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </nav>
+    <%- include('partials/navbar.ejs') %>
 
-        <div class="container">
-            <div class="left"></div>
-            <div id="left">
-                <div id="profile-image">
-                    <p>Carga tu foto de perfil</p>
+    <div class="container-fluid">
+        <div class="row">
+
+            <%- include('partials/profile-left.ejs') %>
+
+            <div class="col-lg-9 col-sm-12 p-5" id="right">
+                <div class="right">
+
+                    <div class="row">
+                        <h2 class="my-5 col-12">Informacion Personal</h2>
+                    </div>
+                    
+                    <div class="row ">
+
+                        <div class="col-sm-12 col-md-6"><div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text basic-addon1"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Nombre y apellido" aria-label="Nombre y apellido" aria-describedby="basic-addon1">
+                          </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text basic-addon1"><i class="fas fa-id-card"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Documento" aria-label="Documento" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text basic-addon1"><i class="fas fa-envelope"></i></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text basic-addon1">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <h2 class="my-5 col-12">Metodos de pago</h2>
+                    </div>
+
+                    <div class="row">
+                        <h3 class="col-12"">Agregar tarjeta</h3>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card py-3 px-5 my-3">
+                                <div class="row d-flex flex-column py-4">
+                                    <i class="fas fa-times"></i>
+                                    <span class="my-2">Visa credito</span>
+                                    <span class="my-2">Terminada en 2419</span>
+                                    <span class="my-2">Banco Galicia</span>
+                                    <span class="my-2">Vencimiento: 01/22</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card py-3 px-5 my-3">
+                                <div class="row d-flex flex-column py-4">
+                                    <i class="fas fa-times"></i>
+                                    <span class="my-2">Visa credito</span>
+                                    <span class="my-2">Terminada en 2419</span>
+                                    <span class="my-2">Banco Galicia</span>
+                                    <span class="my-2">Vencimiento: 01/22</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <h2 class="my-5 col-12">Direcciones</h2>
+                    </div>
+
+                    <div class="row">
+                        <h3 class="col-12">Agregar domicilio</h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 pl-5 my-2">
+                            <i class="fas fa-ellipsis-h btn"></i>
+                            <span>Santa fe 1442, C.A.B.A. - Argentina.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12 pl-5 my-2">
+                            <i class="fas fa-ellipsis-h btn"></i>
+                            <span>Santa fe 1442, C.A.B.A. - Argentina.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12 pl-5 my-2">
+                            <i class="fas fa-ellipsis-h btn"></i>
+                            <span>Santa fe 1442, C.A.B.A. - Argentina.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12 pl-5 my-2">
+                            <i class="fas fa-ellipsis-h btn"></i>
+                            <span>Santa fe 1442, C.A.B.A. - Argentina.</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="offset-7">
+                            <button class="btn btn-info my-5 ">Guardar</button>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
-
-                <ul>
-                    <li><a href="/profile/record">Historial de compras</a></li>
-                    <li><a href="/profile/personal-data">Datos personales</a></li>
-                    <li><a href="/profile/password">Contraseña</a></li>
-                    <li><a href="">Cerrar sesion</a></li>
-                </ul>
-            </div>
-
-            <div id="right">
-                <h2 class="h2">Informacion Personal</h2>
-                <div class="datosPersonales">
-                    <div class="dato">
-                        <label for="nombre">Nombres</label>
-                        <input type="text" placeholder="Ingresa tu nombre">
-                    </div>
-                    <div class="dato">
-                        <label for="apellido">Apellidos</label>
-                        <input id="apellido" type="text" placeholder="Ingresa tu apellido">
-                    </div>
-                    <div class="dato">
-                        <label for="documento">Documento</label>
-                        <input id="documento" type="number" placeholder="Ingresa tu documento">
-                    </div>
-                </div>
-                <div class="datosPersonales">
-                    <div class="dato">
-                        <label for="correo">Correo</label>
-                        <input id="correo" type="email" placeholder="Ingresa Cucorreo">
-                    </div>
-                    <div class="dato">
-                        <label for="telefono">Telefono</label>
-                        <input id="telefono" type="tel" placeholder="Ingresa tu telefono">
-                    </div>
-                    <div class="dato">
-                    </div>
-                </div>
-
-                <h2 class="h2">Metodos de pago</h2>
-                <h4>Agregar tarjeta</h4>
-                <div class="payment">
-                    <div class="tarjeta">
-                        <a href=""><i class="fas fa-times"></i></a>
-                        <span>Visa Credito</span>
-                        <span>Terminada en 2938</span>
-                        <span>Banco Galicia</span>
-                        <span>Vencimiento 11/05</span>
-                    </div>
-                    <div class="tarjeta">
-                        <a href=""><i class="fas fa-times"></i></a>
-                        <span>Visa Credito</span>
-                        <span>Terminada en 2938</span>
-                        <span>Banco Galicia</span>
-                        <span>Vencimiento 11/05</span>
-                    </div>
-                </div>
-
-
-
-                <h2 class="h2">Direcciones</h2>
-                <h4>Agregar domicilio</h4>
-                <div id="direcciones">
-                    <div class="direccion">
-                        <p><i class="fas fa-ellipsis-h"></i> Santa fe 1442, C.A.B.A. - Argentina.</p>
-                    </div>
-                    <div class="direccion">
-                        <p><i class="fas fa-ellipsis-h"></i> Santa fe 1442, C.A.B.A. - Argentina.</p>
-                    </div>
-                    <div class="direccion">
-                        <p><i class="fas fa-ellipsis-h"></i> Santa fe 1442, C.A.B.A. - Argentina.</p>
-                    </div>
-                </div>
-                <div class="relleno"></div>
-                <button>Guardar cambios</button>
             </div>
         </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,132 +13,195 @@
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
 
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Archivos CSS -->
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/detail.css">
     <title>Detail</title>
 </head>
+
 <body>
 
 
 
     <!-- Hoja de estilo para el nav navbar.css -->
-    <div class="relleno"></div>
-    <nav>
-        <div class="navContainer">
-            <a href="/home">
-                <img id="logo" src="/images/logo.svg" alt="">
-            </a>
-            <input id="buscador" type="search" value="" placeholder="Buscar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 m-0 shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="/images/logo.svg" height="40px" alt="">
+            </div>
 
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="/profile">Perfil</a></li>
-                <li><a href="/products">Productos</a></li>
-            </ul>
-            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            <i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item mx-1">
+                        <a href="/home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/profile" class="nav-link">Perfil</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/products" class="nav-link">Productos</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <div class="relleno"></div>
+
     <!-- Hasta aca llega el menu de navegacion -->
-<main class ="contenedorGeneral">
-    <section class ="container" >
-        <div id ="left">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="/images/Boquitas pintadas mostrado.heic" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="/images/Boquitas pintadas en packaging.heic" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="/images/Boquitas pintadas doblado.heic" alt="Third slide">
+    <div class="container">
+        <div class="row">
+            <div div class="col-lg-5 col-md-6 col-sm-12 product mt-5">
+                <div class="left">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="/images/Boquitas pintadas mostrado.heic"
+                                    alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="/images/Boquitas pintadas en packaging.heic"
+                                    alt="Second slide">
+                            </div>
+                            <div  class="carousel-item">
+                                <img class="d-block w-100" src="/images/Boquitas pintadas doblado.heic"
+                                    alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                </div>
-
-        </div>
-            <div id ="right">
-                <p><strong>Pañuelo BOQUITAS PINTADAS</strong><br>
-                Descripción:<br>
-                    Pañuelo sublimado con estampa exclusiva Plumeti <br>
-                    Composición 100% poliester <br>
-                    Medidas: 70 x 70 cms <br>
-                    Foto referencial: al estamparse los colores se pueden oscurecer
-                </p>
-
             </div>
-    </section>
-    <section>
-        <div class= "botones">
-            <a href="" class="boton_1">Comprar ahora</a>
-            <a href="" class="boton_2">Agregar al carrito</a>
-        </div>
-    </section>
-    <section class="comentarios">
-        <h3>Comentarios</h3>
-        <div class ="textarea">
-        <textarea name="mensaje" id="mensaje" cols="20" rows="3" placeholder="Mensaje"></textarea>
-        </div>
-    </section> 
-
-<section class="publicados">
-<h4>Hola, queria saber si destiñe? Gracias</h4><br>
-<h6>Hola, no destiñe dado que es sublimado</h6>
-<br>
-<h4>Hola, viene en caja como se ve en la foto? Gracias</h4><br>
-<h6>Hola, si! como se ve en las imágenes!</h6>
-</section>
-</main>
-    <!-- Hoja de estilo para el footer footer.css -->
-<footer>
-    <h2 id="contact">Contactanos</h2>
-
-    <div class="footerSeparator">
-        <div id="left">
-            <form action="index.html" method="POST">
-                <input type="text" id="nombre" placeholder="Nombre">
-                <input type="tel" id="telefono" placeholder="Telefono">
-                <input type="email" id="correo" placeholder="Correo">
-                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                <input type="submit" id="enviar" value="Enviar">
-            </form>
-        </div>
-
-
-        <div id="right">
-            <ul>
-                <li><a href="https://www.instagram.com/plumetiTEXTIL/"><i class="fab fa-instagram"></i> 
-                    PlumetiTEXTIL
-                </a></li>
-
-                <li><a href="https://www.facebook.com/PlumetiDeco/"><i class="fab fa-facebook-square"></i> 
-                    PlumetiDeco
-                </a></li>
-
-                <li><a href="mailto:clariric@gmail.com"><i class="fas fa-envelope"></i> 
-                    clariric@gmail.com
-                </a></li>
-                
-                <li><a href="https://api.whatsapp.com/send?phone=5491167467772&text=&source=&data="><i class="fab fa-whatsapp"></i> 
-                    +54 9 11 6746-7772
-                </a></li>
-            </ul>
+            <div class="col-lg-7 col-md-6 col-sm-12 product mt-5">
+                <div class="right" >
+                    <h2 class="text-center my-3">Pañuelo BOQUITAS PINTADAS</h2>
+                    <h2 class="text-center my-3">$720</h2>
+                    <p class="text-center my-3">Descripción:<br>
+                        Pañuelo sublimado con estampa exclusiva Plumeti <br>
+                        Composición: 100% poliester <br>
+                        Medidas: 70 x 70 cms <br>
+                        <div id="aclaracion">Foto referencial: al estamparse los colores se pueden oscurecer</div>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</footer>
-<!-- Hasta aca llega el footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-1 col-sm-0 product mt-2">
+
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-6 product mt-2">
+                <button id="boton" type="button" class="btn btn-dark"><a href="/cart" class="nav-link">Comprar ahora</a></button>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-6 product mt-2">
+                <button id="boton" type="button" class="btn btn-dark"><a href="/cart" class="nav-link">Agregar al carrito</a></button>
+            </div>
+            <div class="col-lg-0 col-md-1 col-sm-0 product mt-2">
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div>
+        <div class="container">
+            <div col="row">
+                <div class="comentarios">
+                    <h3>Comentarios</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div col="row">
+            <div class="textarea">
+                <textarea name="mensaje" id="mensaje" rows="5" placeholder="Dejanos tu comentario!"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div col="row">
+            <div class="publicado">
+                <h4>Hola, queria saber si destiñe? Gracias</h4><br>
+                <h6>Hola, no destiñe dado que es sublimado</h6>
+                <br>
+            </div>
+            <div class="publicado">
+                <h4>Hola, viene en caja como se ve en la foto? Gracias</h4><br>
+                <h6>Hola, si! como se ve en las imágenes!</h6>
+                <br>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- Hoja de estilo para el footer footer.css -->
+    <footer class="">
+        <div class="container">
+            
+            <div class="row d-flex justify-content-between">
+
+                <span class="py-5 col-lg-6 col-md-6 col-sm-12 text-center">© Plumeti 2020</span>
+
+
+                <span class="py-5 col-lg-6 col-md-6 col-sm-12 text-center">
+                    <a href="">
+                        <i class="ml-3 fab fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="ml-3 fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="ml-3 fab fa-whatsapp"></i>
+                    </a>
+                    <a href="">
+                        <i class="ml-3 fas fa-envelope"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

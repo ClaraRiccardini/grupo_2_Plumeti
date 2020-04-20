@@ -1,105 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Archivos CSS -->
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="/stylesheets/admproducts.css">
-    <!-- Archivos javascript -->
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
 
-    <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Detail</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/admproducts.css">
+
+
+    <!--Javascript-->
+    <script src="/javascripts/parallax.js"></script>
+    <title>Home</title>
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 m-0 shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="/images/logo.svg" height="40px" alt="">
+            </div>
+
+            <i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
+                
+            <div class="collapse navbar-collapse" id="menu">
+
+                <input class="form-control " type="text" placeholder="Search" aria-label="Search">
 
 
-    <!-- Hoja de estilo para el nav navbar.css -->
-    <div class="relleno"></div>
-    <nav>
-        <div class="navContainer">
-            <a href="/home">
-                <img id="logo" src="/images/logo.svg" alt="">
-            </a>
-            <input id="buscador" type="search" value="" placeholder="Buscar">
-
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="/profile">Perfil</a></li>
-                <li><a href="/products">Productos</a></li>
-            </ul>
-            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item mx-1">
+                        <a href="/home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/profile" class="nav-link">Perfil</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/products" class="nav-link">Productos</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>                
+            </div>
         </div>
     </nav>
+<div class="relleno"></div>
+<div class="container py-5">
+    <div class="row pb-2">
+       <h2 class="col-12">Agregar Producto</h2>
+    </div>
 
-    <section class="container">
-        <div class="tabla">  
-    
-        <h3>Agregar un producto</h3>
+    <div class="row pb-2" id="img-agregar-productos">
+        <div class="col-sm-12 col-md-4 imgproductos pb-2">
+            <div class="img"></div>
+        </div>
+        <div class="col-sm-12 col-md-4 imgproductos pb-2">
+            <div class="img"></div>
+        </div>
+        <div class="col-sm-12 col-md-4 imgproductos pb-2">
+            <div class="img"></div>
+        </div>
+    </div>
 
-<div class="fotoadm"><img src="/images/Boquitas pintadas mostrado.heic" alt=""></div>
-<div class="fotoadm"><img src="/images/Boquitas pintadas mostrado.heic" alt=""></div>
-<div class="fotoadm"><img src="/images/Boquitas pintadas mostrado.heic" alt=""></div>
-<p><input type="text" placeholder="Nombre del producto" name="producto"></p>
-<p><input type="text" placeholder="Descripción" name="Descripción"></p>
-<p><input type="text" placeholder="Precio" name="Precio"></p>
-<p><input type="text" placeholder="Stock" name="Stock"></p>
-<p><input type="text" placeholder="Dimensiones" name="Dimensiones"></p>
-<p><button class=" guardar">Guardar cambios</button></p>
-<p><button>Cancelar</button></p>
+    <div class="row pb-2 input-agregar-producto">
+        <input type="text" placeholder="Nombre" class="col-10 offset-1">
+    </div>
+    <div class="row pb-2 input-agregar-producto">
+        <input type="text" placeholder="Descripcion" class="col-10 offset-1">
+    </div>
+    <div class="row pb-2 input-agregar-producto">
+        <input type="text" placeholder="Precio" class="col-10 offset-1">
+    </div>
+    <div class="row pb-2 input-agregar-producto">
+        <input type="text" placeholder="Stock" class="col-10 offset-1">
+    </div>
+    <div class="row pb-2 input-agregar-producto">
+        <input type="text" placeholder="Dimensiones" class="col-10 offset-1">
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-sm-12 col-md-3 ml-auto button">
+
+            <button> Guardar </button>
+
+            <button>  Cancelar </button>
+        </div>
+    </div>
+<h2 class="pt-5">Productos</h2>
+    <div class="row mt-5 py-3" id="tabla">
+        <div class="col-6">NOMBRE</div>
+        <div class="col-2 ">STOCK</div>
+        <div class="col-2 ">TOTAL</div>
+        <div class="col-2 "></div>
+    </div>
+    <div class="row mt-5 py-3" id="stock">
+        <div class=" col-6 d-flex align-items-center">
+            <span><img class="pr-3 d-none d-lg-block" src="/images/logo.svg" alt=""></span>foto
+        </div>
+        <div class="col-2 ">20 en stock</div>
+        <div class="col-2 ">$750</div>
+        <div class="col-2  d-flex justify-content-around align-items-center">
+            <i class="fas fa-edit "></i>
+            <i class="fas fa-trash"></i>
+        </div>
+    </div>
+
 
 </div>
-</section>
-<!--  -->
+    
 
-<section class="container">
-	<div class="tabla">
-        <h3>Productos</h3>
-	<table>
-			<tr>
-			<th></th>
-			<th style="text-align: center;">PRODUCTO</th>
-            
-            <th>STOCK</th>
-			<th>PRECIO</th>
-			<th>ELIMINAR</th>
-			</tr>
-			<tr>
-			<td><img src="/images/Boquitas pintadas mostrado.heic" alt=""></td>
-			<td>Pañuelo Boquitas</td>
-			<td>1</td>
-			<td>$720</td>
-		
-			<td><a href="#" class="fas fa-trash-alt" id="icono" style="color: #9b736c;"></a> </td>
-			</tr> 
-			<td><img src="/images/Boquitas pintadas mostrado.heic" alt=""></td>
-			<td>Pañuelo Boquitas</td>
-			<td>1</td>
-			<td>$720</td>
-			
-            <td><a href="#" class="fas fa-trash-alt" id="icono" style="color: #9b736c;"></a> </td>
-        </tr>
-        <tr>
-        <td><img src="/images/Boquitas pintadas mostrado.heic" alt=""></td>
-        <td>Pañuelo Boquitas</td>
-        <td>1</td>
-        <td>$720</td>
-       
-        <td><a href="#" class="fas fa-trash-alt" id="icono" style="color: #9b736c;"></a> </td>
-        </tr> 
-            
-	
-		</table>
-	</div>	
-</section>
+
 
     
 </body>

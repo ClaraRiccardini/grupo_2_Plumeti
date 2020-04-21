@@ -61,6 +61,7 @@ footer{ background-color: #E9DFCF; }
 .publicado{
     border-top:1px solid rgb(209, 211, 212);
     padding-top:20px;
+    margin-top:20px;
 }
 
 .publicado h4{
@@ -89,4 +90,8 @@ border: 1px solid #E9DFCF;
 
 p{
     font-size:1.5rem ;
+}
+
+.form-group{
+    border:1px solid  #E9DFCF;
 }

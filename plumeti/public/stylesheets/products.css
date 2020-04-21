@@ -14,26 +14,32 @@
     padding-top:2rem;
     justify-content:center;
     height: 100%;
-
+    overflow: hidden;
 
 }
 
 .navBar ul{
-    font-size: 3vh;
-justify-content: center;}
+justify-content: center;
+  }
 
-.navBar ul a{
-    font-size:3vh;
+  .navBar ul a li{
+      color:white;
+  }
+
+.navBar ul a li:hover{
+
     color:#909090;
     transition: .3s;
-
-
 }
-
 .navBar ul a:hover{
 color:black;
 text-decoration: none;
 }
-.container{
-    display: flex;
+
+#secondRow{
+    margin-top:10px;
+}
+
+#firstRow{
+    margin-top:20px;
 }

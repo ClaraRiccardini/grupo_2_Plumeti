@@ -20,6 +20,7 @@ a:hover{
 }
 
 #tablaTotal{
+
     border:1px solid #E9DFCF; 
     text-align:center;
     margin-top:10px;
@@ -27,6 +28,7 @@ a:hover{
     margin-bottom: 30px;}
 
 #tablaMiddle{
+
 border:1px solid #E9DFCF; 
 text-align:center;
 font-size:0,5rem;

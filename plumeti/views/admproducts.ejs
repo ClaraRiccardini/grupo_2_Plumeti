@@ -13,6 +13,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/admproducts.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
 
 
     <!--Javascript-->
@@ -21,36 +22,9 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 m-0 shadow">
-        <div class="container">
-            <div class="navbar-brand">
-                <img src="/images/logo.svg" height="40px" alt="">
-            </div>
-
-            <i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
-                
-            <div class="collapse navbar-collapse" id="menu">
-
-                <input class="form-control " type="text" placeholder="Search" aria-label="Search">
+    <%- include('partials/navbar.ejs') %>
 
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="navbar-item mx-1">
-                        <a href="/home" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/profile" class="nav-link">Perfil</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/products" class="nav-link">Productos</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>                
-            </div>
-        </div>
-    </nav>
 <div class="relleno"></div>
 <div class="container py-5">
     <div class="row pb-2">

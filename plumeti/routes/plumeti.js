@@ -1,33 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var main = require('../controllers/mainController')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('home', { title: 'Express' });
-});
-
-router.get('/home', function(req, res, next) {
-    res.render('home', { title: 'Express' });
-});
-
-router.get('/products', function(req, res, next) {
-    res.render('products', { title: 'Express' });
-});
-
-router.get('/cart', function(req, res, next) {
-    res.render('cart', { title: 'Express' });
-});
-
-router.get('/detail', function(req, res, next) {
-    res.render('Detail', { title: 'Express' });
-});
-
-router.get('/login', function(req, res, next) {
-    res.render('login', { title: 'Express' });
-});
-
-router.get('/admproducts', function(req, res, next) {
-    res.render('admproducts', { title: 'Express' });
-});
+router.get('/', main.root);
+router.get('/home', main.root);
+router.get('/cart', main.cart);
+router.get('/login', main.login);
 
 module.exports = router;

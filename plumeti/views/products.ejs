@@ -36,58 +36,17 @@
 
                     </div>
                 </div>
+
                 <div class="col-9">
                     <div id="firstRow"class="row">
+                        <% products.forEach(function(prod){ %>
                         <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/Boquitas pintadas mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Boquitas Pintadas</h5>
-                            <p class="text-center px-3">$300</p>
+                            <a href="products/detail/<%=prod.id %>"><img class="w-100" src="/images/<%=prod.image%>" alt=""></a>
+                            <h5 class="px-1 my-2 text-center"><%=prod.name %></h5>
+                            <p class="text-center px-3">$<%=prod.price%></p>
                         </div>
-                        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/afra azul mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Africa Azul</h4>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-                        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/jardin estrellado naranja mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Jardin Naranja</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/orquidea celeste mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Orquídea Celeste</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-                    </div>
-                    <div id="secondRow" class="row">
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/alegria amarilla mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Alegría Amarilla</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-                        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/cala azul mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Calandra Azul</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-                        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/afra fucsia mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Africa Fucsia</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-        
-                        <div id="producto" class="producto col-lg-3 col-md-6 col-sm-12 mt-1 position-relative">
-                            <a href="/detail"><img class="w-100" src="/images/orquidea celeste mostrado.heic" alt=""></a>
-                            <h5 class="px-1 my-2 text-center">Orquídea Celeste</h5>
-                            <p class="text-center px-3">$300</p>
-                        </div>
-                    </div>
-                    
+                        <% })%>
+
                 </div>
             
 

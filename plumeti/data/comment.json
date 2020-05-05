@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "pregunta":"Hola, queria saber si destiñe? Gracias",
+        "respuesta":"Hola, no destiñe dado que es sublimado"
+    },
+    {
+        "id":2,
+        "pregunta":"Hola, viene en caja como se ve en la foto? Gracias",
+        "respuesta":"Hola, si! como se ve en las imágenes!"
+    }
+]

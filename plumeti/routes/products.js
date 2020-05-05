@@ -18,15 +18,16 @@ var upload = multer({storage:storage});
 // Agregar como segundo parametro a las rutas post 'upload.any()'
 
 
-
 // listado de productos
 router.get('/', productsController.root);
+//router.post('/detail/:id', productsController.creatComment);
 
 //Creacion de producto mediante formulario
 router.post('/products', productsController.edity);
 
 //Detalle de un producto particular
 router.get('/detail/:id', productsController.detail);
+//router.post('/detail/:id',upload.any(), productsController.creatComment);
 
 //Editar un producto mediante formulario
 router.put('/:id', upload.any(), productsController.update);

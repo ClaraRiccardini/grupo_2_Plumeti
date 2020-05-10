@@ -49,7 +49,10 @@ const controller = {
     
 	// Create -  Method to store
 	store: function(req, res, next) {
-		res.render('admproducts');
+		let productos = products;
+		res.render('admproducts', {
+			productos: productos
+		});
 	},
 
 	// Update - Form to edit
@@ -71,6 +74,24 @@ const controller = {
 	},
 	// Update - Method to update
 	edity: (req, res, next) => {
+		let nombre = req.body.nombre;
+		let precio = req.body.precio;
+		let descripcion = req.body.descripcion;
+		let stock = req.body.stock;
+		let dimensiones = req.body.dimensiones;
+		
+
+		let  productoNuevo = {
+			nombre : nombre,
+			precio: precio,
+			descripcion: descripcion,
+			stock: stock,
+			dimensiones: dimensiones,
+	
+		}
+
+		products.push(productoNuevo);
+		fs.writeFileSync(productsFilePath,JSON.stringify(products))
         
 	},
 	editProd: function(req, res, next) {

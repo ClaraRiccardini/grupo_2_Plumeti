@@ -1,6 +1,11 @@
-#img-agregar-productos .imgproductos .img {
 
-    height: 300px;
+#img-agregar-productos .imgproductos img{
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    opacity: 0;
+    width: 100%;
     border: 1px dashed black;
 }
 
@@ -28,3 +33,11 @@ padding: 10px;
 #stock img {
     height: 2rem;
 }
+
+input[type='file'] {
+    outline: none;
+    border: none;
+    background-color: transparent;
+   padding: 100px;
+    border: 1px dashed black;  
+  }

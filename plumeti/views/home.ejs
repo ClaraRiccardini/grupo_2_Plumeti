@@ -43,61 +43,30 @@
             <h2 class=" mt-5 pt-5">Productos Destacados</h2>
 
             <div class="row my-5">
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
 
+                <% for(var i = 0; i < 4; i++){ %>
+                    <a href="/products/detail/<%= destacado[i].id %>" class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
+                        <img class="w-100" src="/images/<%= destacado[i].image %>" alt="">
+                        <h3 class="px-3 my-2 text-center"><%= destacado[i].name %></h3>
+                        <p class="text-center px-3">$<%= destacado[i].price %></p>
+                    </a>
+                <% } %>
 
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
-
-
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
-
-
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
             </div>
 
 
             <h2 class=" mt-5 pt-5">Productos Nuevos</h2>
 
             <div class="row my-5">
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
                 
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
-                
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
+                <% for(var i = 0; i < 4; i++){ %>
+                    <a href="/products/detail/<%= nuevo[i].id %>" class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
+                            <img class="w-100" src="/images/<%= nuevo[i].image %>" alt="">
+                            <h3 class="px-3 my-2 text-center"><%= nuevo[i].name %></h3>
+                            <p class="text-center px-3">$<%= nuevo[i].price %></p>
+                    </a>
+                <% } %>
 
-                <div class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                    <img class="w-100" src="/images/slider1.jpg" alt="">
-                    <h3 class="px-3 my-2 text-center">Nombre del producto</h3>
-                    <p class="text-center px-3">$300</p>
-                </div>
             </div>
         </div>
     </main>

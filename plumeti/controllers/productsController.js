@@ -74,6 +74,13 @@ const controller = {
         
 	},
 	editProd: function(req, res, next) {
+		let prod = products.filter(function(prod){
+			return prod.id == req.params.id
+		})
+
+		res.render('form-edit-prod', {
+			product: prod
+		})
 
 	}
 };

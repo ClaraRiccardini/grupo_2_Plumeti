@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Fontawesome-->
+    <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/admproducts.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+
+
+    <!--Javascript-->
+    <script src="/javascripts/parallax.js"></script>
+    <title>Home</title>
+</head>
+<body>
+
+    <%- include('partials/navbar.ejs') %>
+    <div class="relleno"></div>
+    <div class="container">
+
+    
+
+    <h1>Estas editando el producto: <%= product[0].name %> </h1>
+
+    <form action="products/<%= product[0].id %>/edit" method="POST">
+
+        <div class="row">
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Nombre</label>
+                <input class="w-100" type="text" value="<%= product[0].name %>" placeholder="Nombre del producto">
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Stock</label>
+                <input class="w-100" type="text" value="<%= product[0].stock %>" placeholder="Stock del producto">      
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Precio</label>
+                <input class="w-100" type="text" value="<%= product[0].price %>" placeholder="Precio del producto">
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Composicion</label>
+                <input class="w-100" type="text" value="<%= product[0].composicion %>" placeholder="Composicion del producto">
+                
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Medidas</label>
+                <input class="w-100" type="text" value="<%= product[0].medidas %>" placeholder="Medidas del producto">
+                
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Aclaracion</label>
+                <input class="w-100" type="text" value="<%= product[0].aclaracion %>" placeholder="Aclaracion del producto">
+                
+            </div>
+        </div>
+        
+        
+
+        
+
+        
+
+
+
+        
+
+        
+
+        
+
+
+
+        <label class="d-block mt-5" for="">Tipo de producto</label>
+        <input class="w-100" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
+
+        <label class="d-block mt-5" for="">Categoria</label>
+        <input class="w-100" type="text" value="<%= product[0].category %>" placeholder="category del producto">
+
+        <label class="d-block mt-5" for="">Descripcion</label>
+        <input class="w-100" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+
+    </form>
+    
+
+</div>
+
+    
+</body>
+</html>

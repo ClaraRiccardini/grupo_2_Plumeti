@@ -29,14 +29,15 @@ router.post('/products', productsController.edity);
 router.get('/detail/:id', productsController.detail);
 //router.post('/detail/:id',upload.any(), productsController.creatComment);
 
-//Editar un producto mediante formulario
-router.put('/:id', upload.any(), productsController.update);
 
 //Eliminar producto 
 router.delete('/:id', productsController.destroy);
 
 //formulario de edicion de productos
 router.get('/:id/edit', upload.any(), productsController.editProd);
+
+//Editar un producto mediante formulario
+router.put('/:id', upload.any(), productsController.update);
 
 //Formulario para creacion de productos
 router.get('/create', upload.any(), productsController.store);

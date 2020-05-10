@@ -18,3 +18,9 @@ section article.banner{
     background-image: url('/images/slider2.jpg');
     background-size: cover;
 }
+a.producto{
+    transition: .3s;
+}
+a.producto:hover{
+    transform: scale(1.03);
+}

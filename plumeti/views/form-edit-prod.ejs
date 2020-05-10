@@ -76,26 +76,26 @@
 
         
 
+        <div class="row">
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Tipo de producto</label>
+                <input class="w-100" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Categoria</label>
+                <input class="w-100" type="text" value="<%= product[0].category %>" placeholder="category del producto">
+            </div>
+
+            <div class="col-4">
+                <label class="d-block mt-5" for="">Descripcion</label>
+                <input class="w-100" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+            </div>
+        </div>
         
-
-
-
-        
-
-        
-
-        
-
-
-
-        <label class="d-block mt-5" for="">Tipo de producto</label>
-        <input class="w-100" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
-
-        <label class="d-block mt-5" for="">Categoria</label>
-        <input class="w-100" type="text" value="<%= product[0].category %>" placeholder="category del producto">
-
-        <label class="d-block mt-5" for="">Descripcion</label>
-        <input class="w-100" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+        <button type="submit">Guardar cambios</button>
+        <button> <a href="/products/create"> Cancelar </a> </button>
+       
 
     </form>
     

@@ -12,7 +12,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/home.css">
-    <link rel="stylesheet" href="/stylesheets/admproducts.css">
+    <link rel="stylesheet" href="/stylesheets/form-edit-prod.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
 
 
@@ -30,22 +30,31 @@
 
     <h1>Estas editando el producto: <%= product[0].name %> </h1>
 
-    <form action="products/<%= product[0].id %>/edit" method="POST">
+    <form action="/products/<%= product[0].id %>?_method=PUT" method="POST" class="form-edit-prod">
 
         <div class="row">
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Nombre</label>
-                <input class="w-100" type="text" value="<%= product[0].name %>" placeholder="Nombre del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Nombre</label>
+                    <input class="w-100" name="nombre" type="text" value="<%= product[0].name %>" placeholder="Stock del producto">      
+                </div>
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Stock</label>
-                <input class="w-100" type="text" value="<%= product[0].stock %>" placeholder="Stock del producto">      
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Stock</label>
+                    <input class="w-100" name="stock" type="text" value="<%= product[0].stock %>" placeholder="Stock del producto">      
+                </div>
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Precio</label>
-                <input class="w-100" type="text" value="<%= product[0].price %>" placeholder="Precio del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Precio</label>
+                    <input class="w-100" name="precio" type="text" value="<%= product[0].price %>" placeholder="Precio del producto">
+                </div>
             </div>
         </div>
 
@@ -53,21 +62,30 @@
 
 
         <div class="row">
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Composicion</label>
-                <input class="w-100" type="text" value="<%= product[0].composicion %>" placeholder="Composicion del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Composicion</label>
+                    <input class="w-100" name="composicion" type="text" value="<%= product[0].composicion %>" placeholder="Composicion del producto">
+                </div>
                 
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Medidas</label>
-                <input class="w-100" type="text" value="<%= product[0].medidas %>" placeholder="Medidas del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Medidas</label>
+                    <input class="w-100" name="medidas" type="text" value="<%= product[0].medidas %>" placeholder="Medidas del producto">
+                </div>
                 
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Aclaracion</label>
-                <input class="w-100" type="text" value="<%= product[0].aclaracion %>" placeholder="Aclaracion del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Aclaracion</label>
+                    <input class="w-100" name="aclaracion" type="text" value="<%= product[0].aclaracion %>" placeholder="Aclaracion del producto">
+                </div>
                 
             </div>
         </div>
@@ -77,24 +95,35 @@
         
 
         <div class="row">
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Tipo de producto</label>
-                <input class="w-100" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Tipo de producto</label>
+                    <input class="w-100" name="tipo" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
+                </div>
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Categoria</label>
-                <input class="w-100" type="text" value="<%= product[0].category %>" placeholder="category del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Categoria</label>
+                    <input class="w-100" name="categoria" type="text" value="<%= product[0].category %>" placeholder="category del producto">
+                </div>
             </div>
 
-            <div class="col-4">
-                <label class="d-block mt-5" for="">Descripcion</label>
-                <input class="w-100" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="p-4">
+
+                    <label class="d-block" for="">Descripcion</label>
+                    <input class="w-100" name="descripcion" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+                </div>
             </div>
         </div>
-        
-        <button type="submit">Guardar cambios</button>
-        <button> <a href="/products/create"> Cancelar </a> </button>
+
+        <div class="ml-auto w-25  mr-4">
+            <button type="submit" class="btn m-2 bg-info text-white ">Guardar</button>
+            <button class="btn m-2"> <a href="/products/create"> Cancelar </a> </button>
+        </div>
        
 
     </form>

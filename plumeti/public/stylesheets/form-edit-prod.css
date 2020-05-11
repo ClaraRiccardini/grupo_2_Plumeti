@@ -1,0 +1,14 @@
+.form-edit-prod input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #909090;
+}
+.form-edit-prod button{
+    background-color: #fff;
+    outline: none;
+    border: none;
+}
+
+.form-edit-prod label{
+    color: #707070;
+}

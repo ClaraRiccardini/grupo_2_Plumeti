@@ -61,9 +61,33 @@ const controller = {
 	},
 	// Update - Method to update
 	update: function(req, res, next) {
-		//Do the magic
 
-		//res.redirect('')
+
+		
+
+		products.forEach((prod)=>{
+			if(prod.id == req.params.id){
+				prod.name = req.body.nombre;
+				prod.stock = req.body.stock;
+				prod.price = req.body.precio;
+				prod.composicion = req.body.composicion;
+				prod.medidas = req.body.medidas;
+				prod.aclaracion = req.body.aclaracion;
+				prod.producto = req.body.tipo;
+				prod.category = req.body.categoria;
+				prod.description = req.body.descripcion;
+			}
+		});
+
+		
+		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		
+		
+		let productos = products;
+		res.render('admproducts', {
+			productos: productos
+		});
+
 	},
 
 	// Delete - Delete one product from DB

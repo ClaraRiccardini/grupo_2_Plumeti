@@ -100,12 +100,14 @@
 
         <div class="row mt-5 py-3" id="stock">
             <div class=" col-6 d-flex align-items-center">
-                <span><img class="pr-3 d-none d-lg-block" src="/images/<%=productos[i].image%>" alt=""></span>foto
+                <span><img class="pr-3 d-none d-lg-block" src="/images/<%=productos[i].image%>" alt=""></span><%=productos[i].name%>
             </div>
-            <div class="col-2 "><%=productos[i].stock%> en stock></div>
+            <div class="col-2 "><%=productos[i].stock%> en stock</div>
             <div class="col-2 ">$<%=productos[i].price%></div>
             <div class="col-2  d-flex justify-content-around align-items-center">
-                <i class="fas fa-edit "></i>
+                <a href="/products/<%=productos[i].id%>/edit">
+                    <i class="fas fa-edit "></i>
+                </a>
                 <i class="fas fa-trash"></i>
             </div>
         </div>

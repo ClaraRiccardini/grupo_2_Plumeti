@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var plumeti = require('./routes/plumeti');
 var profile = require('./routes/profile');
 var products = require('./routes/products');
+var cart = require('./routes/cart');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', plumeti);
 app.use('/profile', profile);
 app.use('/products', products);
 app.use('/users', usersRouter);
+app.use('/cart', cart);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

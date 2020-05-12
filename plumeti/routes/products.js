@@ -31,7 +31,8 @@ router.get('/detail/:id', productsController.detail);
 
 
 //Eliminar producto 
-router.delete('/:id', productsController.destroy);
+router.delete('/delete/:id', productsController.destroy); /* DELETE - Delete from DB */
+
 
 //formulario de edicion de productos
 router.get('/:id/edit', upload.any(), productsController.editProd);
@@ -41,5 +42,6 @@ router.put('/:id', upload.any(), productsController.update);
 
 //Formulario para creacion de productos
 router.get('/create', upload.any(), productsController.store);
+
 
 module.exports = router;

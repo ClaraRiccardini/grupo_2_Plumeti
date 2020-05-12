@@ -27,9 +27,9 @@ const controller = {
         })
     },
 
-    cart: function(req, res, next){
-        res.render('cart')
-    },
+    //cart: function(req, res, next){
+        //res.render('cart')
+   // },
 
     login: function(req, res, next){
         res.render('login')

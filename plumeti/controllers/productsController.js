@@ -46,7 +46,11 @@ const controller = {
 
 	let commentsModificadosJSON = JSON.stringify(comments)
 	fs.appendFileSync(commentsFilePath,commentsModificadosJSON)},*/
-    
+	//create: (req, res) => {        
+		//res.render("form-nuevoproducto.ejs")
+		//res.redirect("products.ejs")
+	//	},
+
 	// Create -  Method to store
 	store: function(req, res, next) {
 		let productos = products;
@@ -55,16 +59,8 @@ const controller = {
 		});
 	},
 
-	// Update - Form to edit
-	edit: (req, res, next) => {
-        
-	},
 	// Update - Method to update
 	update: function(req, res, next) {
-
-
-		
-
 		products.forEach((prod)=>{
 			if(prod.id == req.params.id){
 				prod.name = req.body.nombre;
@@ -79,23 +75,25 @@ const controller = {
 			}
 		});
 
-		
 		fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		
 		
 		let productos = products;
 		res.render('admproducts', {
 			productos: productos
 		});
-
 	},
 
 	// Delete - Delete one product from DB
-	destroy : function(req, res, next) {
-		//Do the magic
+destroy: (req, res) => {   
+		let productsQueQuedan = products.filter(function(element){
+		return element.id != req.params.id
+	})
+	products=productsQueQuedan
+	let productosModificadosJSON = JSON.stringify(products)
+	fs.writeFileSync(productsFilePath,productosModificadosJSON)
+	res.send(productsQueQuedan)
+},
 
-		//res.redirect('')
-	},
 	// Update - Method to update
 	edity: (req, res, next) => {
 		let nombre = req.body.nombre;
@@ -127,7 +125,8 @@ const controller = {
 			product: prod
 		})
 
-	}
+	},
+
 };
 
 module.exports = controller;

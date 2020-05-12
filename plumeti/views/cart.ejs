@@ -26,35 +26,27 @@
     <%- include('partials/navbar.ejs') %>
 	<div class="container">
 		<div class="row d-flex align-items-center">
+			<% products.forEach(function(prod){ %>
 			<section id="tablaFirst" class="col-12 d-flex align-items-center">
-				<img class="col-2" src="/images/boquitas-pintadas-1.HEIC" alt="BOQUITAS PINTADAS">
-				<span class="col-3 ">BOQUITAS PINTADAS</span>
+				<img class="col-2" src="/images/<%=prod.image%>" alt="BOQUITAS PINTADAS">
+				<span class="col-3 "><%=prod.name%></span>
 				<span class="col-4 ">
 					<div id="botonModificar" class="btn-group mr-2 .btn-group-*" role="group" aria-label="Second group">
 						<button id="boton" type="button" class="btn btn-secondary">-</button>
-						<button id="boton" type="button" class="btn btn-secondary">1</button>
-						<button id="boton" type="button" class="btn btn-secondary">+</button>
+						<button id="boton" type="button" >1</button>
+						<a href="/cart"><button id="boton" type="button" class="btn btn-secondary">+</button></a>
+
 					</div>
 				</span>
-				<span class="col-2">$300</span>
-				<span class="col-1"><a href="#" class="fas fa-trash-alt" id="icono" style="color:black;"></a></span>
+				<span class="col-2">$<%=prod.price%></span>					
+				<form action="/cart/delete/<%=prod.id%>?_method=DELETE" method="POST">
+					<button><i class="fas fa-trash"></i></button>
+				</form>
+
 			</section>
+			<% })%>
 		</div>
-		<div class="row d-flex align-items-center">
-			<section id="tablaMiddle" class="col-12 d-flex align-items-center">
-				<img class="col-2 col-xs-1" src="/images/boquitas-pintadas-1.HEIC" alt="BOQUITAS PINTADAS">
-				<span class="col-3">BOQUITAS PINTADAS</span>
-				<span class="col-4">
-					<div id="botonModificar" class="btn-group mr-2 .btn-group-*" role="group" aria-label="Second group">
-						<button id="boton" type="button" class="btn btn-secondary">-</button>
-						<button id="boton" type="button" class="btn btn-secondary">1</button>
-						<button id="boton" type="button" class="btn btn-secondary">+</button>
-					</div>
-				</span>
-				<span class="col-2">$300</span>
-				<span class="col-1"><a href="#" class="fas fa-trash-alt" id="icono" style="color:black;"></a></span>
-			</section>
-		</div>
+
 		<div class="row d-flex align-items-center">
 			<section id="tablaTotal" class="col-12 d-flex align-items-center">
 				<img class="col-2">

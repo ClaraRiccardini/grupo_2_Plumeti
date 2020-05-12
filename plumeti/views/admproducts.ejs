@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
@@ -20,87 +22,89 @@
     <script src="/javascripts/parallax.js"></script>
     <title>Home</title>
 </head>
+
 <body>
 
     <%- include('partials/navbar.ejs') %>
 
 
-<div class="relleno"></div>
-<div class="container py-5">
-    <div class="row pb-2">
-       <h2 class="col-12">Agregar Producto</h2>
-    </div>
+    <div class="relleno"></div>
+    <div class="container py-5">
+        <div class="row pb-2">
+            <h2 class="col-12">Agregar Producto</h2>
+        </div>
 
-    <form action="products/products" enctype="multipart/form-data" method="POST">
+        <form action="products/products" enctype="multipart/form-data" method="POST">
 
-        <div class="row pb-2" id="img-agregar-productos">
-            <div class="col-sm-12 col-md-4 imgproductos pb-2">
-                
+            <div class="row pb-2" id="img-agregar-productos">
+                <div class="col-sm-12 col-md-4 imgproductos pb-2">
+
                     <input type="file" name="img" class="w-100 border shadow img">
-                    
-                
-            </div>
-            <div class="col-sm-12 col-md-4 imgproductos pb-2">
-                
+
+
+                </div>
+                <div class="col-sm-12 col-md-4 imgproductos pb-2">
+
                     <input type="file" name="img" class="w-100 border shadow img">
-                    
-                
-            </div>
-            <div class="col-sm-12 col-md-4 imgproductos pb-2">
-                
+
+
+                </div>
+                <div class="col-sm-12 col-md-4 imgproductos pb-2">
+
                     <input type="file" name="img" class="w-100 border shadow img">
-                    
-                
+
+
+                </div>
             </div>
-        </div>
-        
-        <div class="row pb-2 input-agregar-producto">
-            <input type="text" placeholder="Nombre" name="nombre" class="col-10 offset-1">
-        </div>
-        <div class="row pb-2 input-agregar-producto">
-            <input type="text" placeholder="Descripcion" name="descripcion" class="col-10 offset-1">
-        </div>
-        <div class="row pb-2 input-agregar-producto">
-            <input type="text" placeholder="Precio" name="precio" class="col-10 offset-1">
-        </div>
-        <div class="row pb-2 input-agregar-producto">
-            <input type="text" placeholder="Stock" name="stock" class="col-10 offset-1">
-        </div>
-        <div class="row pb-2 input-agregar-producto">
-            <input type="text" placeholder="Dimensiones" name="dimensiones" class="col-10 offset-1">
-        </div>
-        
-        <div class="row pt-3">
-            <div class="col-sm-12 col-md-3 ml-auto button">
-                
-                <button type="submit"> Guardar </button>
-                
-                <button>  Cancelar </button>
+
+            <div class="row pb-2 input-agregar-producto">
+                <input type="text" placeholder="Nombre" name="nombre" class="col-10 offset-1">
             </div>
+            <div class="row pb-2 input-agregar-producto">
+                <input type="text" placeholder="Descripcion" name="descripcion" class="col-10 offset-1">
+            </div>
+            <div class="row pb-2 input-agregar-producto">
+                <input type="text" placeholder="Precio" name="precio" class="col-10 offset-1">
+            </div>
+            <div class="row pb-2 input-agregar-producto">
+                <input type="text" placeholder="Stock" name="stock" class="col-10 offset-1">
+            </div>
+            <div class="row pb-2 input-agregar-producto">
+                <input type="text" placeholder="Dimensiones" name="dimensiones" class="col-10 offset-1">
+            </div>
+
+            <div class="row pt-3">
+                <div class="col-sm-12 col-md-3 ml-auto button">
+
+                    <button type="submit"> Guardar </button>
+
+                    <button> Cancelar </button>
+                </div>
+            </div>
+
+
+        </form>
+
+        <!-- crear un if verificar si hay productos mostrar una lista con los productos, los productos se muestran con un ciclo for si no hay productos mostrar un texto que diga no tienes productos creados -->
+
+        <%if(productos != undefined){%>
+        <h2 class="pt-5">Productos</h2>
+
+
+
+        <div class="row mt-5 py-3" id="tabla">
+            <div class="col-6">NOMBRE</div>
+            <div class="col-2 ">STOCK</div>
+            <div class="col-2 ">TOTAL</div>
+            <div class="col-2 "></div>
         </div>
-    
-    
-    </form>
 
-    <!-- crear un if verificar si hay productos mostrar una lista con los productos, los productos se muestran con un ciclo for si no hay productos mostrar un texto que diga no tienes productos creados -->
-    
-    <%if(productos != undefined){%>    
-    <h2 class="pt-5">Productos</h2>
-
-
-    
-    <div class="row mt-5 py-3" id="tabla">
-        <div class="col-6">NOMBRE</div>
-        <div class="col-2 ">STOCK</div>
-        <div class="col-2 ">TOTAL</div>
-        <div class="col-2 "></div>
-    </div>
-
-   <% for(var i = 0; i < productos.length; i++ ){ %>
+        <% for(var i = 0; i < productos.length; i++ ){ %>
 
         <div class="row mt-5 py-3" id="stock">
             <div class=" col-6 d-flex align-items-center">
-                <span><img class="pr-3 d-none d-lg-block" src="/images/<%=productos[i].image%>" alt=""></span><%=productos[i].name%>
+                <span><img class="pr-3 d-none d-lg-block" src="/images/<%=productos[i].image%>"
+                        alt=""></span><%=productos[i].name%>
             </div>
             <div class="col-2 "><%=productos[i].stock%> en stock</div>
             <div class="col-2 ">$<%=productos[i].price%></div>
@@ -108,20 +112,27 @@
                 <a href="/products/<%=productos[i].id%>/edit">
                     <i class="fas fa-edit "></i>
                 </a>
-                <i class="fas fa-trash"></i>
+
+					<form action="/products/delete/<%=productos[i].id%>?_method=DELETE" method="POST">
+						<button><i class="fas fa-trash"></i></button>
+					</form>
+
             </div>
         </div>
-    <% } %>
-        
-    <% } else { %>
+        <% } %>
+
+        <% } else { %>
         <h2>Aun no tienes productos creados</h2>
-    <% } %>
-        
-</div>
-    
+        <% } %>
+
+    </div>
 
 
 
-    
+
+
 </body>
+
 </html>
+
+

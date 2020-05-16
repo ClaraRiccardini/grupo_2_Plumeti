@@ -13,9 +13,11 @@ const comments = JSON.parse(fs.readFileSync(commentsFilePath, 'utf8'));
 //console.log(comments)
 const controller = {
 	// Root - Show all products
+
+
 	root: (req, res) => {
 		res.render("products.ejs", {
-			products : products,
+			products : products
 		})
 	},
 
@@ -84,15 +86,19 @@ const controller = {
 	},
 
 	// Delete - Delete one product from DB
-destroy: (req, res) => {   
+	destroy: (req, res) => {
 		let productsQueQuedan = products.filter(function(element){
-		return element.id != req.params.id
-	})
-	products=productsQueQuedan
-	let productosModificadosJSON = JSON.stringify(products)
-	fs.writeFileSync(productsFilePath,productosModificadosJSON)
-	res.send(productsQueQuedan)
-},
+			return element.id != req.params.id
+		}) 
+		
+		let productosModificadosJSON = JSON.stringify(productsQueQuedan)
+		fs.writeFileSync(productsFilePath,productosModificadosJSON)
+		
+		let productos = productsQueQuedan;
+		res.render('admproducts', {
+			productos: productos
+		});
+	},
 
 	// Update - Method to update
 	edity: (req, res, next) => {
@@ -128,5 +134,6 @@ destroy: (req, res) => {
 	},
 
 };
+
 
 module.exports = controller;

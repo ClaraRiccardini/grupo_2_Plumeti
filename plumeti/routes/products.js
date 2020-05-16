@@ -27,7 +27,12 @@ router.post('/products', productsController.edity);
 
 //Detalle de un producto particular
 router.get('/detail/:id', productsController.detail);
-//router.post('/detail/:id',upload.any(), productsController.creatComment);
+router.post('/detail:id',upload.any(), productsController.creatComment);
+
+
+//Filtrado categoria nuevo
+router.get('/nuevo', productsController.filtrarNuevos);
+router.get('/destacado', productsController.filtrarDestacados);
 
 
 //Eliminar producto 

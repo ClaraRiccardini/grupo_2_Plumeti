@@ -11,6 +11,7 @@ const controller = {
 			products : products,
 		})
 	},
+
 	contador: function(req, res, next) {
 		let numero = 0;
 		req.session.numero = numero;
@@ -29,10 +30,10 @@ const controller = {
 		let productsQueQuedan = products.filter(function(element){
 		return element.id != req.params.id
 	})
-	products=productsQueQuedan
+
 	let productosModificadosJSON = JSON.stringify(products)
 	fs.writeFileSync(productsFilePath,productosModificadosJSON)
-	res.send(products)
+	res.send(productsQueQuedan)
 },
 }
 

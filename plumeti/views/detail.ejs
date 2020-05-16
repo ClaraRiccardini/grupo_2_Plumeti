@@ -108,7 +108,7 @@
         <form>
             <div class="form-group">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                    placeholder="Dejanos tu comentario!" action="/detail" ></textarea>
+                    placeholder="Dejanos tu comentario!" type="text" name="pregunta" action="/detail/<%=prod.id%>" method="POST"></textarea>
             </div>
             <button>Enviar</button>
         </form>
@@ -119,7 +119,6 @@
             <% comments.forEach(function(comment){ %>
             <div class="publicado">
                 <h4><%=comment.pregunta%></h4><br>
-                <h6><%=comment.respuesta%></h6>
                 <br>
             </div>
             <% }) %>

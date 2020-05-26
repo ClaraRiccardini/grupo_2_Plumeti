@@ -28,7 +28,7 @@
 		<div class="row d-flex align-items-center">
 			<% products.forEach(function(prod){ %>
 			<section id="tablaFirst" class="col-12 d-flex align-items-center">
-				<img class="col-2" src="/images/<%=prod.image%>" alt="BOQUITAS PINTADAS">
+				<img class="col-2" src="/images/<%=prod.image%>" alt="">
 				<span class="col-3 "><%=prod.name%></span>
 				<span class="col-4 ">
 					<div id="botonModificar" class="btn-group mr-2 .btn-group-*" role="group" aria-label="Second group">
@@ -40,7 +40,7 @@
 				</span>
 				<span class="col-2">$<%=prod.price%></span>					
 				<form action="/cart/delete/<%=prod.id%>?_method=DELETE" method="POST">
-					<button><i class="fas fa-trash"></i></button>
+					<button class="trash" type="submit"><i class="fas fa-trash"></i></button>
 				</form>
 
 			</section>

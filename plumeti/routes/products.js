@@ -36,7 +36,7 @@ router.get('/destacado', productsController.filtrarDestacados);
 
 
 //Eliminar producto 
-router.delete('/delete/:id', productsController.destroy); /* DELETE - Delete from DB */
+router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
 
 
 //formulario de edicion de productos

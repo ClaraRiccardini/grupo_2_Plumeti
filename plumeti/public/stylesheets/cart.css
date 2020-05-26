@@ -58,5 +58,8 @@ margin-bottom: 30px;}
         background:blue;
     }
 
-
+    .trash{
+        background-color: transparent;
+        border: none;outline: none;
+    }
 

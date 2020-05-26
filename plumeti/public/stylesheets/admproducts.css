@@ -41,3 +41,8 @@ input[type='file'] {
    padding: 100px;
     border: 1px dashed black;  
   }
+
+  .trash{
+      background-color: transparent;
+      border: none;outline: none;
+  }

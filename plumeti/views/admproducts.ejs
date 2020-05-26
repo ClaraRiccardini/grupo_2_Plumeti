@@ -16,10 +16,6 @@
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/admproducts.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
-
-
-    <!--Javascript-->
-    <script src="/javascripts/parallax.js"></script>
     <title>Home</title>
 </head>
 
@@ -113,8 +109,8 @@
                     <i class="fas fa-edit "></i>
                 </a>
 
-					<form action="/products/delete/<%=productos[i].id%>?_method=DELETE" method="POST">
-						<button><i class="fas fa-trash"></i></button>
+					<form action="/products/<%=productos[i].id%>?_method=DELETE" method="POST">
+						<button class="trash" type="submit"><i class="fas fa-trash"></i></button>
 					</form>
 
             </div>

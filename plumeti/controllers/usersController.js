@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-//const bcrypt = require('bcrypt');
-const { check, validationResult, body } = require('express-validator');
+const bcrypt = require('bcryptjs');
+
+const {
+    check,
+    validationResult,
+    body
+} = require('express-validator');
 //const bcrypt = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -10,102 +15,120 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
 
+
 const controller = {
     // Root - Show all products
     root: function (req, res, next) {
-        res.render('products', { title: 'Express' });
+        res.render('products', {
+            userLogged: req.session.usuarioLogueado
+        });
     },
     login: function (req, res, next) {
-        res.render('login')
+        res.render('login', {
+            userLogged: req.session.usuarioLogueado
+        })
     },
     register: function (req, res, next) {
-        res.render('register')
+        res.render('register',{
+            userLogged: req.session.usuarioLogueado
+        })
     },
     create: function (req, res, next) {
-        let nombre = req.body.nombre;
-        let usuario = req.body.usuario;
-        let contrasenia = req.body.contrasenia;
-        let email = req.body.email;
+        let {
+            check,
+            validationResult,
+            body
+        } = require('express-validator');
 
-        let newUser = {
-            nombre: nombre,
-            usuario: usuario,
-            contrasenia: contrasenia,
-            email: email
+        var errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let id = users.length + 1;
+            let nombre = req.body.nombre;
+            let usuario = req.body.usuario;
+            let contrasenia = req.body.contrasenia;
+            let email = req.body.email;
+
+            let newUser = {
+                id: id,
+                nombre: nombre,
+                usuario: usuario,
+                contrasenia: contrasenia,
+                email: email
+            }
+
+            users.push(newUser);
+            fs.writeFileSync(usersFilePath, JSON.stringify(users))
+
+            //console.log(dest)
+            res.redirect('/')
+        } else {
+            res.render('register', {
+                errors: errors.errors
+            })
         }
-
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users))
-
-        //console.log(dest)
-        res.redirect('/')
     },
-    processLogin: function(req, res){
-        // Creamos la variable errores
-        let errors = validationResult(req);
-        
-        //Verificamos si hay errores
-        if(errors.isEmpty()){
-            //si no hay errores
-            let usersFile = fs.readFileSync('/data/users.json', {encoding: 'utf-8'});
-            //definivimos la variable
-            let users;
-            //revisamos si el archivo está vacío
-            if(usersFile == ""){
-                users = [];
-            } else {
-                users = JSON.parse(usersFile);
-            };
-            
-            //verificamos e-mail y contraseña
-           let userToLogin
-           console.log(req.body);
-            for(var i = 0; i<users.length; i++){
-                if(req.body.email == users[i].email){
-                    if(bcrypt.compareSync(req.body.password, users[i].contrasenia)){
-                        userToLogin = users[i];
-                        //console.log(userToLogin);
+    processLogin: function (req, res) {
+        let {check, validationResult, body} = require('express-validator');
+
+        var errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
+            for( var i = 0; i < users.length; i++){
+                if(users[i].usuario == req.body.usuario){
+                    //if(bcrypt.compareSync(req.body.password == userLog[i].contrasenia)){
+                        if(req.body.contrasenia == users[i].contrasenia){
+                        var usuarioALoguearse = users[i];
                         break;
                     }
                 }
             }
 
-           // En caso de que el usuario esté indefinido hacemos nuestro propio mensaje de error
-            if(userToLogin == undefined){
-                res.render('login', {
-                    title:'login',
+            if(usuarioALoguearse == undefined){
+                return res.render('login', {
                     errors: [
-                    {msg: 'Credenciales inválidas'}
-                ]});
+                        {msg: 'Credenciales invalidas'}
+                    ],
+                    userLogged: req.session.usuarioLogueado
+                })
             }
 
-            //aplicamos session acá con el usuario encontrado
-            //para que se puede "mantener vivo" la ejecución debería terminar en algún lado
-            req.session.userLogged = userToLogin;
+            
+            let destacado = products.filter(function(prod){
+                if (prod.category == "destacado")
+                {return prod}
+            })
+            let nuevo = products.filter(function(prod){
+                return prod.category == 'nuevo'
+            })
+            
+            req.session.usuarioLogueado = usuarioALoguearse
+            let loggedUser = req.session.usuarioLogueado;
 
-            //creando la cookie para la casilla "recuérdame"
-            if(req.body.rememberMe != undefined){
-                res.cookie('rememberMe', userToLogin.email, {maxAge: 60000})
+
+            let tiempoExpiracion = 60 * 1000 *1000 * 1000 * 1000;
+
+            if(req.body.recordame != undefined){
+                res.cookie('recordame', usuarioALoguearse.id, {maxAge: tiempoExpiracion})
             }
-            console.log(req.session.userLogged)
-            res.render('profile',{
-                nombre: req.session.userLogged.nombre,
-                avatar: req.session.userLogged.avatar,
-                email: req.session.userLogged.email,
 
-            });
 
+     
+
+     
+             res.render('home', {
+                 destacado: destacado,
+                 nuevo: nuevo,
+                 userLogged: loggedUser
+             })
         } else {
-            res.render('login', {
-                errors: errors.errors,
-                title: "LOGIN"
+            return res.render('login', {
+                errors: errors.errors
             })
         }
-
     },
-
-
-
 };
 
 module.exports = controller;
+
+

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/eff8b9a252.js" crossorigin="anonymous"></script>
 
     <!--CSS-->
-    <link rel="stylesheet" href="/stylesheets/home.css">
+
     <link rel="stylesheet" href="/stylesheets/login.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
@@ -20,40 +22,54 @@
 </head>
 
 <body>
-    <%- include('partials/navbar.ejs') %>
+    <%- include('partials/navbar.ejs',{userLogged}) %>
+    <div class="relleno"></div>
 
-<div class="relleno"></div>
-<!-- Hasta aca llega el menu de navegacion -->
-<div class="container">
-  <div class="row justify-content-center py-4">      
-        <img class= " col-sm-3 m-auto col-md-3 product mt-5 w-100" src="/images/login.png" alt=""></div>
-       
-</div>
-    <h2 class="text-center">Iniciar sesión</h2>
-    <div class="row justify-content-center">
-   
- <form class="col-lg-3 col-md-6 col-sm-12 text-center" action="/users/login" method="POST">
-    
-<P><input type="text" placeholder="Usuario" name="Usuario"></P>
+    <!-- Hasta aca llega el menu de navegacion -->
+    <div class="container py-4 cont-login">
 
-<p><input type="password" placeholder="Contraseña" name="Contraseña"></p>
-<p><button>Ingresar</button></p>
-<p><a href="">¿No recuerdas tu Contraseña?</a></p>
-<p><a href="">Crear nueva cuenta</a></p>
-
-    </form>
- 
-</div>
-</div>
+        <!--   <img class=" col-sm-3 m-auto col-md-3 product mt-5 w-100" src="/images/login.png" alt=""></div> -->
 
 
+        <h2 class=" pb-4">Iniciar sesión</h2>
 
-<%- include('partials/footer.ejs') %>
+        <% if( typeof errors != 'undefined'){ %>
+            <ul>
+                <% for(var i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                <% } %>
+            </ul>
+        <% } %>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-    
+        <form class="form-login col-lg-3 col-md-6 col-sm-12 text-center" action="/users/login" method="POST">
+
+            <input class="login" type="text" placeholder="Usuario" name="usuario">
+
+            <input class="login" type="password" placeholder="Contraseña" name="contrasenia">
+            <div class="inner-form-recordame">
+                <input type="checkbox" id="recordame" name="recordame">
+                <label for="recordame">Recordame</label>
+            </div>
+
+            <button type="submit" class="my-4">Ingresar</button>
+            <a href="/users/register">Crear cuenta</a>
+        </form>
+    </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+
 </body>
+
 </html>

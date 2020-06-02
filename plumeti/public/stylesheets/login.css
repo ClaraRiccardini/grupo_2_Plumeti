@@ -1,6 +1,43 @@
-    button {
-        background-color:#e9dfcf;
-border-radius: 5px;
-outline:none;
-padding: 10px;
-    }
+button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border: 1px solid #E9DFCF;
+    border-radius: 5px;
+    color: #E9DFCF;
+    transition: .3s;
+}
+button:hover{
+    background-color: #E9DFCF;
+    color: white;
+    box-shadow: 0 0 6px #E9DFCF;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-login .login{
+    width: 20rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #909090;
+    transition: .3s;
+    margin: 10px 0;
+}
+.form-login .login:focus{
+    background-color: #f7f7f7;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+}
+.cont-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inner-form-recordame{
+    align-self: flex-start;
+}

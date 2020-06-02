@@ -19,19 +19,13 @@ const controller = {
         let nuevo = products.filter(function(prod){
             return prod.category == 'nuevo'
         })
-//console.log(dest)
+
         res.render('home', {
             destacado: destacado,
-            nuevo: nuevo
+            nuevo: nuevo,
+            userLogged: req.session.usuarioLogueado
         })
     }
-
-    //cart: function(req, res, next){
-        //res.render('cart')
-   // },
-
-
-
 };
 
 module.exports = controller;

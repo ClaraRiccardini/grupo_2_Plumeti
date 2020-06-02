@@ -5,7 +5,7 @@
         </div>
 
         <i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
-            
+
         <div class="collapse navbar-collapse" id="menu">
 
             <input class="form-control " type="text" placeholder="Buscar" aria-label="Search">
@@ -15,18 +15,32 @@
                 <li class="navbar-item mx-1">
                     <a href="/home" class="nav-link">Inicio</a>
                 </li>
-                <li class="navbar-item mx-1">
-                    <a href="/profile" class="nav-link">Perfil</a>
-                </li>
-                <li class="navbar-item mx-1">
-                    <a href="/products" class="nav-link">Productos</a>
-                </li>
-                <li class="navbar-item mx-1">
-                    <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-                </li>
-            </ul>                
+
+                <% if(userLogged != undefined){ %>
+                    <li class="navbar-item mx-1">
+                        <a href="/profile" class="nav-link">Perfil</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/products" class="nav-link">Productos</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                <% } else { %>
+
+                    <li class="navbar-item mx-1">
+                        <a href="/products" class="nav-link">Productos</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/users/login" class="nav-link">Ingresa</a>
+                    </li>
+                    <li class="navbar-item mx-1">
+                        <a href="/users/register" class="nav-link">Registrate</a>
+                    </li>
+                <% } %>
+
+            </ul>
         </div>
     </div>
 </nav>
-
 <div class="relleno"></div>

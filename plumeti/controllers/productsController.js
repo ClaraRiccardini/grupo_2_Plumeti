@@ -17,7 +17,7 @@ const controller = {
 
 	root: (req, res) => {
 		res.render("products.ejs", {
-
+			userLogged: req.session.usuarioLogueado,
 			products: products
 		})
 	},
@@ -33,7 +33,7 @@ const controller = {
 
 		if (prod) {
 			res.render("detail.ejs", {
-
+				userLogged: req.session.usuarioLogueado,
 				prod: prod,
 				comments: comments
 			})
@@ -44,7 +44,8 @@ const controller = {
 	store: function (req, res, next) {
 		let productos = products;
 		res.render('admproducts', {
-			productos: productos
+			productos: productos,
+			userLogged: req.session.usuarioLogueado
 		});
 	},
 
@@ -68,7 +69,8 @@ const controller = {
 
 		let productos = products;
 		res.render('admproducts', {
-			productos: productos
+			productos: productos,
+			userLogged: req.session.usuarioLogueado
 		});
 	},
 
@@ -83,7 +85,8 @@ const controller = {
 
 		let productos = productsQueQuedan;
 		res.render('admproducts', {
-			productos: productos
+			productos: productos,
+			userLogged: req.session.usuarioLogueado
 		});
 	},
 
@@ -121,7 +124,9 @@ const controller = {
 
 		let commentsModificadosJSON = JSON.stringify(comments)
 		fs.writeFileSync(commentsFilePath, commentsModificadosJSON)
-		res.render("/detail")
+		res.render("/detail",{
+			userLogged: req.session.usuarioLogueado
+		})
 
 
 	},
@@ -130,7 +135,8 @@ const controller = {
 	store: function (req, res, next) {
 		let productos = products;
 		res.render('admproducts', {
-			productos: productos
+			productos: productos,
+			userLogged: req.session.usuarioLogueado
 		});
 	},
 
@@ -154,7 +160,8 @@ const controller = {
 
 		let productos = products;
 		res.render('admproducts', {
-			productos: productos
+			productos: productos,
+			userLogged: req.session.usuarioLogueado
 		});
 	},
 
@@ -197,7 +204,8 @@ const controller = {
 		})
 
 		res.render('form-edit-prod', {
-			product: prod
+			product: prod,
+			userLogged: req.session.usuarioLogueado
 		})
 
 	},
@@ -210,7 +218,8 @@ const controller = {
 		//console.log(productsNuevos)
 		if (productsCategoria) {
 			res.render("productsNuevos.ejs", {
-				productsCategoria: productsCategoria
+				productsCategoria: productsCategoria,
+				userLogged: req.session.usuarioLogueado
 			});
 		}
 	},
@@ -223,7 +232,8 @@ const controller = {
 		//console.log(productsNuevos)
 		if (productsCategoria) {
 			res.render("productsNuevos.ejs", {
-				productsCategoria: productsCategoria
+				productsCategoria: productsCategoria,
+				userLogged: req.session.usuarioLogueado
 			});
 		}
 	},

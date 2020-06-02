@@ -5,15 +5,31 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
 
 
 module.exports = {
-    login : function(req,res,next){
-            let usuario = req.body.usuario;
-            let contrasenia = req.body.contrasenia
-            
-            let user = users.find(function (us) {
-                return us.usuario == usuario && us.contrasenia == contrasenia
-            })
-            
+    auth: (req, res, next) => {
+        if (req.session.usuarioLogueado != undefined) {
+            next()
+        } else {
+            res.send('Esta pagina es solo para usuarios')
+        }
+    },
+    guest: (req, res, next) => {
+        if (req.session.usuarioLogueado == undefined) {
+            next()
+        } else {
+            res.send('Ya iniciaste sesion')
+        }
+    },
+    recordame: function(req,res, next){
+        if(req.cookies.recordame != undefined && req.session.usuarioLogueado == undefined){
+            for( var i = 0; i < users.length; i++){
+                if(users[i].id == req.cookies.recordame){
+                    var usuarioALoguearse = users[i];
+                    break;
+                }
+            }
 
+            req.session.usuarioLogueado = usuarioALoguearse
+        }
         next()
     }
 }

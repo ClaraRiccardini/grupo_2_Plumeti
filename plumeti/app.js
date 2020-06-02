@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
+const session = require('express-session')
 //const bcrypt = require('bcrypt');
 
 var indexRouter = require('./routes/index');
@@ -12,6 +13,7 @@ var plumeti = require('./routes/plumeti');
 var profile = require('./routes/profile');
 var products = require('./routes/products');
 var cart = require('./routes/cart');
+var usersMiddleware = require('./middlewares/usersMiddleware')
 
 var app = express();
 
@@ -25,12 +27,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session( {secret: "secret"}))
 //app.use(bcrypt);
+
 app.use('/', plumeti);
-app.use('/profile', profile);
+app.use('/profile', usersMiddleware.auth, profile);
 app.use('/products', products);
 app.use('/users', usersRouter);
-app.use('/cart', cart);
+app.use('/cart', usersMiddleware.auth, cart);
+app.use(usersMiddleware.recordame)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

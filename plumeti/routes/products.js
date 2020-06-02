@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const multer = require('multer');
+var usersMiddleware = require('../middlewares/usersMiddleware')
 
 var productsController = require('../controllers/productsController');
 
@@ -40,13 +41,13 @@ router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
 
 
 //formulario de edicion de productos
-router.get('/:id/edit', upload.any(), productsController.editProd);
+router.get('/:id/edit', usersMiddleware.auth, upload.any(), productsController.editProd);
 
 //Editar un producto mediante formulario
 router.put('/:id', upload.any(), productsController.update);
 
 //Formulario para creacion de productos
-router.get('/create', upload.any(), productsController.store);
+router.get('/create', usersMiddleware.auth, upload.any(), productsController.store);
 
 
 module.exports = router;

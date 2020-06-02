@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <%- include('partials/navbar.ejs') %>
+    <%- include('partials/navbar.ejs',{userLogged}) %>
 	<div class="container">
 		<div class="row d-flex align-items-center">
 			<% products.forEach(function(prod){ %>

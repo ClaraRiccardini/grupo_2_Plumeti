@@ -43,7 +43,11 @@
                             <li><a href="/profile/personal-data">Datos Personales</a></li>
                             <li><a href="/profile/record">Historial de compras</a></li>
                             <li><a href="/profile/password">Contraseñas</a></li>
-                            <li><a href="/profile/logout">Cerrar Sesion</a></li>
+                            <form action="/users/logout" method="GET">
+                                <button id="botonLogout" type="submit">
+                                    Cerrar sesión
+                                </button>
+                        </form>
                         </ul>
                     </nav>
                 </div>

@@ -22,4 +22,6 @@ router.post('/register',  [
     check('email').isEmail().withMessage('El email es obligatorio')
 ], users.create);
 
+router.get('/logout', users.logout)
+
 module.exports = router;

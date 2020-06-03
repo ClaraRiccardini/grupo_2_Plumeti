@@ -17,26 +17,35 @@
                 </li>
 
                 <% if(userLogged != undefined){ %>
-                    <li class="navbar-item mx-1">
-                        <a href="/profile" class="nav-link">Perfil</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/products" class="nav-link">Productos</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                <% } else { %>
 
-                    <li class="navbar-item mx-1">
-                        <a href="/products" class="nav-link">Productos</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/users/login" class="nav-link">Ingresa</a>
-                    </li>
-                    <li class="navbar-item mx-1">
-                        <a href="/users/register" class="nav-link">Registrate</a>
-                    </li>
+                <li class="navbar-item mx-1">
+                    <a href="/profile" class="nav-link">Hola <%=userLogged.nombre%></a>
+                </li>
+
+                <li class="navbar-item mx-1">
+                    <a href="/products" class="nav-link">Productos</a>
+                </li>
+                <li class="navbar-item mx-1">
+                    <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <form action="/users/logout" method="GET">
+                        <button id="botonLogout" type="submit">
+                            Cerrar
+                        </button>
+                </form>
+
+
+
+                <% } else { %>
+                <li class="navbar-item mx-1">
+                    <a href="/products" class="nav-link">Productos</a>
+                </li>
+                <li class="navbar-item mx-1">
+                    <a href="/users/login" class="nav-link">Ingresa</a>
+                </li>
+                <li class="navbar-item mx-1">
+                    <a href="/users/register" class="nav-link">Registrate</a>
+                </li>
                 <% } %>
 
             </ul>

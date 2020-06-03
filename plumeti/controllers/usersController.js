@@ -29,7 +29,7 @@ const controller = {
         })
     },
     register: function (req, res, next) {
-        res.render('register',{
+        res.render('register', {
             userLogged: req.session.usuarioLogueado
         })
     },
@@ -68,65 +68,80 @@ const controller = {
         }
     },
     processLogin: function (req, res) {
-        let {check, validationResult, body} = require('express-validator');
+        let { check, validationResult, body } = require('express-validator');
 
         var errors = validationResult(req);
 
         if (errors.isEmpty()) {
 
-            for( var i = 0; i < users.length; i++){
-                if(users[i].usuario == req.body.usuario){
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].usuario == req.body.usuario) {
                     //if(bcrypt.compareSync(req.body.password == userLog[i].contrasenia)){
-                        if(req.body.contrasenia == users[i].contrasenia){
+                    if (req.body.contrasenia == users[i].contrasenia) {
                         var usuarioALoguearse = users[i];
                         break;
                     }
                 }
             }
 
-            if(usuarioALoguearse == undefined){
+            if (usuarioALoguearse == undefined) {
                 return res.render('login', {
                     errors: [
-                        {msg: 'Credenciales invalidas'}
+                        { msg: 'Credenciales inválidas' }
                     ],
                     userLogged: req.session.usuarioLogueado
                 })
             }
 
-            
-            let destacado = products.filter(function(prod){
-                if (prod.category == "destacado")
-                {return prod}
+
+            let destacado = products.filter(function (prod) {
+                if (prod.category == "destacado") { return prod }
             })
-            let nuevo = products.filter(function(prod){
+            let nuevo = products.filter(function (prod) {
                 return prod.category == 'nuevo'
             })
-            
+
             req.session.usuarioLogueado = usuarioALoguearse
             let loggedUser = req.session.usuarioLogueado;
 
 
-            let tiempoExpiracion = 60 * 1000 *1000 * 1000 * 1000;
+            let tiempoExpiracion = 60 * 1000 * 1000 * 1000 * 1000;
 
-            if(req.body.recordame != undefined){
-                res.cookie('recordame', usuarioALoguearse.id, {maxAge: tiempoExpiracion})
+            if (req.body.recordame != undefined) {
+                res.cookie('recordame', usuarioALoguearse.id, { maxAge: tiempoExpiracion })
             }
 
 
-     
-
-     
-             res.render('home', {
-                 destacado: destacado,
-                 nuevo: nuevo,
-                 userLogged: loggedUser
-             })
+            res.render('home', {
+                destacado: destacado,
+                nuevo: nuevo,
+                userLogged: loggedUser
+            })
         } else {
             return res.render('login', {
                 errors: errors.errors
             })
         }
     },
+    logout: function (req, res) {
+        let destacado = products.filter(function (prod) {
+            if (prod.category == "destacado") { return prod }
+        })
+        let nuevo = products.filter(function (prod) {
+            return prod.category == 'nuevo'
+        })
+        req.session.usuarioLogueado = undefined
+
+            res.render('home', {
+                destacado: destacado,
+                nuevo: nuevo,
+                userLogged: undefined,
+                loggedUser: undefined,
+                usuarioLogueado: undefined,
+                usuarioaLoguearse: undefined,
+
+            })
+    }
 };
 
 module.exports = controller;

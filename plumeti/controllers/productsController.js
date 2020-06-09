@@ -6,6 +6,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
 const commentsFilePath = path.join(__dirname, '../data/comment.json');
 const comments = JSON.parse(fs.readFileSync(commentsFilePath, 'utf8'));
 
+const db = require("../database/models");
+let sequelize = db.sequelize
+
 //Estan viniendo todos los productos?
 //console.log(products)
 
@@ -236,6 +239,18 @@ const controller = {
 				userLogged: req.session.usuarioLogueado
 			});
 		}
+	},
+	algo: function (req, res) {
+
+		db.Producto.sequelize.query("SELECT * FROM productos")
+		.then(function(result){
+			console.log(result)
+		})
+		.catch(function(er){
+			console.log(er)
+		})
+		
+
 	},
 
 

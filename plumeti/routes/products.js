@@ -16,12 +16,9 @@ var storage = multer.diskStorage({
 
 var upload = multer({storage:storage});
 
-// Agregar como segundo parametro a las rutas post 'upload.any()'
-
-
 // listado de productos
 router.get('/', productsController.root);
-//router.post('/detail/:id', productsController.creatComment);
+router.get('/algo', productsController.algo);
 
 //Creacion de producto mediante formulario
 router.post('/products', productsController.edity);
@@ -30,15 +27,12 @@ router.post('/products', productsController.edity);
 router.get('/detail/:id', productsController.detail);
 router.post('/detail:id',upload.any(), productsController.creatComment);
 
-
 //Filtrado categoria nuevo
 router.get('/nuevo', productsController.filtrarNuevos);
 router.get('/destacado', productsController.filtrarDestacados);
 
-
 //Eliminar producto 
 router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
-
 
 //formulario de edicion de productos
 router.get('/:id/edit', usersMiddleware.auth, upload.any(), productsController.editProd);

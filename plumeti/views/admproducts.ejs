@@ -83,7 +83,7 @@
 
         <!-- crear un if verificar si hay productos mostrar una lista con los productos, los productos se muestran con un ciclo for si no hay productos mostrar un texto que diga no tienes productos creados -->
 
-        <%if(productos != undefined){%>
+        <%if(products != undefined){%>
         <h2 class="pt-5">Productos</h2>
 
 
@@ -95,21 +95,24 @@
             <div class="col-2 "></div>
         </div>
 
-        <% for(var i = 0; i < productos.length; i++ ){ %>
+        <% for(var i = 0; i < products.length; i++ ){ %>
 
         <div class="row mt-5 py-3" id="stock">
             <div class=" col-6 d-flex align-items-center">
-                <span><img class="pr-3 d-none d-lg-block" src="/images/<%=productos[i].image%>"
-                        alt=""></span><%=productos[i].name%>
+                <span>
+                    <img class="pr-3 d-none d-lg-block" src="/images/<%=products[i].img1%>"
+                        alt="">
+                </span>
+                <%=products[i].name%>
             </div>
-            <div class="col-2 "><%=productos[i].stock%> en stock</div>
-            <div class="col-2 ">$<%=productos[i].price%></div>
+            <div class="col-2 "><%=products[i].stock%> en stock</div>
+            <div class="col-2 ">$<%=products[i].price%></div>
             <div class="col-2  d-flex justify-content-around align-items-center">
-                <a href="/products/<%=productos[i].id%>/edit">
+                <a href="/products/<%=products[i].id%>/edit">
                     <i class="fas fa-edit "></i>
                 </a>
 
-					<form action="/products/<%=productos[i].id%>?_method=DELETE" method="POST">
+					<form action="/products/<%=products[i].id%>?_method=DELETE" method="POST">
 						<button class="trash" type="submit"><i class="fas fa-trash"></i></button>
 					</form>
 

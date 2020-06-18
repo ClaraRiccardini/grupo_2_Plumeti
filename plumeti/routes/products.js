@@ -18,14 +18,12 @@ var upload = multer({storage:storage});
 
 // listado de productos
 router.get('/', productsController.root);
-router.get('/algo', productsController.algo);
 
 //Creacion de producto mediante formulario
 router.post('/products', productsController.edity);
 
 //Detalle de un producto particular
 router.get('/detail/:id', productsController.detail);
-router.post('/detail:id',upload.any(), productsController.creatComment);
 
 //Filtrado categoria nuevo
 router.get('/nuevo', productsController.filtrarNuevos);
@@ -35,13 +33,13 @@ router.get('/destacado', productsController.filtrarDestacados);
 router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
 
 //formulario de edicion de productos
-router.get('/:id/edit', usersMiddleware.auth, upload.any(), productsController.editProd);
+router.get('/:id/edit',  productsController.editProd); //usersMiddleware.auth, upload.any(),
 
 //Editar un producto mediante formulario
-router.put('/:id', upload.any(), productsController.update);
+router.put('/edit/:id', productsController.update);
 
 //Formulario para creacion de productos
-router.get('/create', usersMiddleware.auth, upload.any(), productsController.store);
+router.get('/create', upload.any(), productsController.store);  //usersMiddleware.auth
 
 
 module.exports = router;

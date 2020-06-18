@@ -25,16 +25,16 @@
 
     
 
-    <h1>Estas editando el producto: <%= product[0].name %> </h1>
+    <h1>Estas editando el producto: <%= product.name %> </h1>
 
-    <form action="/products/<%= product[0].id %>?_method=PUT" method="POST" class="form-edit-prod">
+    <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form-edit-prod">
 
         <div class="row">
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="p-4">
 
                     <label class="d-block" for="">Nombre</label>
-                    <input class="w-100" name="nombre" type="text" value="<%= product[0].name %>" placeholder="Stock del producto">      
+                    <input class="w-100" name="nombre" type="text" value="<%= product.name %>" placeholder="Stock del producto">      
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Stock</label>
-                    <input class="w-100" name="stock" type="text" value="<%= product[0].stock %>" placeholder="Stock del producto">      
+                    <input class="w-100" name="stock" type="text" value="<%= product.stock %>" placeholder="Stock del producto">      
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Precio</label>
-                    <input class="w-100" name="precio" type="text" value="<%= product[0].price %>" placeholder="Precio del producto">
+                    <input class="w-100" name="precio" type="text" value="<%= product.price %>" placeholder="Precio del producto">
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Composicion</label>
-                    <input class="w-100" name="composicion" type="text" value="<%= product[0].composicion %>" placeholder="Composicion del producto">
+                    <input class="w-100" name="composicion" type="text" value="<%= product.composicion %>" placeholder="Composicion del producto">
                 </div>
                 
             </div>
@@ -72,7 +72,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Medidas</label>
-                    <input class="w-100" name="medidas" type="text" value="<%= product[0].medidas %>" placeholder="Medidas del producto">
+                    <input class="w-100" name="medidas" type="text" value="<%= product.medidas %>" placeholder="Medidas del producto">
                 </div>
                 
             </div>
@@ -81,7 +81,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Aclaracion</label>
-                    <input class="w-100" name="aclaracion" type="text" value="<%= product[0].aclaracion %>" placeholder="Aclaracion del producto">
+                    <input class="w-100" name="aclaracion" type="text" value="<%= product.aclaracion %>" placeholder="Aclaracion del producto">
                 </div>
                 
             </div>
@@ -96,7 +96,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Tipo de producto</label>
-                    <input class="w-100" name="tipo" type="text" value="<%= product[0].producto %>" placeholder="producto del producto">
+                    <input class="w-100" name="tipo" type="text" value="<%= product.producto %>" placeholder="producto del producto">
                 </div>
             </div>
 
@@ -104,7 +104,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Categoria</label>
-                    <input class="w-100" name="categoria" type="text" value="<%= product[0].category %>" placeholder="category del producto">
+                    <input class="w-100" name="categoria" type="text" value="<%= product.category %>" placeholder="category del producto">
                 </div>
             </div>
 
@@ -112,7 +112,7 @@
                 <div class="p-4">
 
                     <label class="d-block" for="">Descripcion</label>
-                    <input class="w-100" name="descripcion" type="text" value="<%= product[0].description %>" placeholder="Descripcion del producto">
+                    <input class="w-100" name="descripcion" type="text" value="<%= product.description %>" placeholder="Descripcion del producto">
                 </div>
             </div>
         </div>

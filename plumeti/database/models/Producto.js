@@ -31,17 +31,24 @@ module.exports = (sequelize, DataType) => {
             category: {
                 type: DataType.STRING
             },
-            producto: {
+            type: {
                 type: DataType.STRING
             },
-            carrito_id: {
-                type: DataType.INTEGER
+            img1: {
+                type: DataType.STRING
+            },
+            img2: {
+                type: DataType.STRING
+            },
+            img3: {
+                type: DataType.STRING
             }
         },
         {
-            tableName: 'productos',
+            tableName: 'products',
             timestamps: false
         }
     )
+
     return producto
 }

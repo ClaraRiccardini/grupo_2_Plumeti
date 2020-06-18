@@ -31,11 +31,11 @@ app.use(session( {secret: "secret"}))
 //app.use(bcrypt);
 
 app.use('/', plumeti);
-app.use('/profile', usersMiddleware.auth, profile);
+app.use('/profile', profile); //usersMiddleware.auth
 app.use('/products', products);
 app.use('/users', usersRouter);
-app.use('/cart', usersMiddleware.auth, cart);
-app.use(usersMiddleware.recordame)
+app.use('/cart', cart); //usersMiddleware.auth
+//app.use(usersMiddleware.recordame)
 
 
 // catch 404 and forward to error handler

@@ -19,9 +19,6 @@ var upload = multer({storage:storage});
 // listado de productos
 router.get('/', productsController.root);
 
-//Creacion de producto mediante formulario
-router.post('/products', productsController.edity);
-
 //Detalle de un producto particular
 router.get('/detail/:id', productsController.detail);
 
@@ -29,8 +26,11 @@ router.get('/detail/:id', productsController.detail);
 router.get('/nuevo', productsController.filtrarNuevos);
 router.get('/destacado', productsController.filtrarDestacados);
 
-//Eliminar producto 
-router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
+//Formulario para creacion de productos
+router.get('/create', upload.any(), productsController.create);  //usersMiddleware.auth
+
+//Creacion de producto mediante formulario
+router.post('/create', productsController.store);
 
 //formulario de edicion de productos
 router.get('/:id/edit',  productsController.editProd); //usersMiddleware.auth, upload.any(),
@@ -38,8 +38,10 @@ router.get('/:id/edit',  productsController.editProd); //usersMiddleware.auth, u
 //Editar un producto mediante formulario
 router.put('/edit/:id', productsController.update);
 
-//Formulario para creacion de productos
-router.get('/create', upload.any(), productsController.store);  //usersMiddleware.auth
+//Eliminar producto 
+router.delete('/:id', productsController.destroy); /* DELETE - Delete from DB */
+
+
 
 
 module.exports = router;

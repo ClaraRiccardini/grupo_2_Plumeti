@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
+const db = require("../database/models");
+let sequelize = db.sequelize
+
 const {
     check,
     validationResult,
@@ -23,42 +26,23 @@ const controller = {
             userLogged: req.session.usuarioLogueado
         });
     },
-    login: function (req, res, next) {
-        res.render('login', {
-            userLogged: req.session.usuarioLogueado
-        })
-    },
     register: function (req, res, next) {
         res.render('register', {
             userLogged: req.session.usuarioLogueado
         })
     },
-    create: function (req, res, next) {
-        let {
-            check,
-            validationResult,
-            body
-        } = require('express-validator');
+    creatUser: function (req, res, next) {
 
         var errors = validationResult(req);
         if (errors.isEmpty()) {
-            let id = users.length + 1;
-            let nombre = req.body.nombre;
-            let usuario = req.body.usuario;
-            let contrasenia = req.body.contrasenia;
-            let email = req.body.email;
-
-            let newUser = {
-                id: id,
-                nombre: nombre,
-                usuario: usuario,
-                contrasenia: contrasenia,
-                email: email
-            }
-
-            users.push(newUser);
-            fs.writeFileSync(usersFilePath, JSON.stringify(users))
-
+            console.log(User)
+            console.log(req.body)
+        db.User.create({
+                nombre: req.body.nombre,
+                usuario: req.body.usuario,
+                contrasenia: req.body.contrasenia,
+                email: req.body.email
+            });
             //console.log(dest)
             res.redirect('/')
         } else {
@@ -66,6 +50,11 @@ const controller = {
                 errors: errors.errors
             })
         }
+    },
+        login: function (req, res, next) {
+        res.render('login', {
+            userLogged: req.session.usuarioLogueado
+        })
     },
     processLogin: function (req, res) {
         let { check, validationResult, body } = require('express-validator');

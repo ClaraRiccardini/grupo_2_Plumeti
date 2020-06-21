@@ -27,17 +27,14 @@ const controller = {
 				console.log(er)
 			})
 	},
-
 	// Detail - Detail from one product
 	detail: function (req, res) {
-
 		db.Producto.findByPk(req.params.id)
-			.then(function (result) {
-
-				if (result) {
+			.then(function (prod) {
+				if (prod) {
 					res.render("detail.ejs", {
 						userLogged: req.session.usuarioLogueado,
-						prod: result,
+						prod: prod,
 						comments: comments
 					})
 				}
@@ -48,7 +45,7 @@ const controller = {
 			})
 	},
 	// Create -  Method to store
-	store: function (req, res, next) {
+	create: function (req, res, next) {
 		db.Producto.findAll()
 			.then(function (result) {
 
@@ -61,14 +58,28 @@ const controller = {
 				console.log(er)
 			})
 	},
+	// Update - Method to update
+	store: function (req, res) {
+		console.log(req.body)
+		console.log(req.body.name)
+        db.Producto.create({
+            name: req.body.name,
+            description: req.body.description,
+            stock: req.body.stock,
+            price: req.body.price,
+            medidas: req.body.medidas
+        })
+
+        res.redirect("/home")
+    },	
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
 
 		db.Producto.destroy({
-				where: {
-					id: req.params.id
-				}
-			})
+			where: {
+				id: req.params.id
+			}
+		})
 			.then(function (result) {
 				res.redirect('/admproducts')
 			})
@@ -80,20 +91,20 @@ const controller = {
 	update: function (req, res, next) {
 		console.log(req.body)
 		db.Producto.update({
-				name: req.body.nombre,
-				stock: req.body.stock,
-				price: req.body.precio,
-				composicion: req.body.composicion,
-				medidas: req.body.medidas,
-				aclaracion: req.body.aclaracion,
-				producto: req.body.tipo,
-				category: req.body.categoria,
-				description: req.body.descripcion
-			}, {
-				where: {
-					id: req.params.id
-				}
-			})
+			name: req.body.nombre,
+			stock: req.body.stock,
+			price: req.body.precio,
+			composicion: req.body.composicion,
+			medidas: req.body.medidas,
+			aclaracion: req.body.aclaracion,
+			producto: req.body.tipo,
+			category: req.body.categoria,
+			description: req.body.descripcion
+		}, {
+			where: {
+				id: req.params.id
+			}
+		})
 			.then(function (result) {
 				res.render("admproducts", {
 					userLogged: req.session.usuarioLogueado,
@@ -106,25 +117,6 @@ const controller = {
 
 
 
-	},
-	// Update - Method to update
-	edity: (req, res, next) => {
-		let nombre = req.body.nombre;
-		let precio = req.body.precio;
-		let descripcion = req.body.descripcion;
-		let stock = req.body.stock;
-		let dimensiones = req.body.dimensiones;
-
-		let productoNuevo = {
-			nombre: nombre,
-			precio: precio,
-			descripcion: descripcion,
-			stock: stock,
-			dimensiones: dimensiones,
-		}
-
-		products.push(productoNuevo);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 	},
 	editProd: function (req, res, next) {
 
@@ -138,32 +130,44 @@ const controller = {
 				})
 			})
 	},
-	filtrarNuevos: function (req, res) {
-		let productsCategoria = products.filter(function (element) {
-			return element.category == "nuevo"
-		})
-		//Esta viniendo el producto que llamo?
-		//console.log(productsNuevos)
-		if (productsCategoria) {
-			res.render("productsNuevos.ejs", {
-				productsCategoria: productsCategoria,
-				userLogged: req.session.usuarioLogueado
-			});
+	filtrarNuevos: (req, res) => {
+		db.Producto.findAll({
+			where: {
+				category: "nuevo"
+			}
 		}
-	},
-	filtrarDestacados: function (req, res) {
-		let productsCategoria = products.filter(function (element) {
-			return element.category == "destacado"
-		})
-		//Esta viniendo el producto que llamo?
-		//console.log(productsNuevos)
+		)
+			.then(function (products) {
+				console.log(products)
+				res.render("productsNuevos.ejs", {
+					userLogged: req.session.usuarioLogueado,
+					products: products
+				})
 
-		if (productsCategoria) {
-			res.render("productsNuevos.ejs", {
-				productsCategoria: productsCategoria,
-				userLogged: req.session.usuarioLogueado
-			});
+			})
+			.catch(function (er) {
+				console.log(er)
+			})
+	},
+
+	filtrarDestacados: (req, res) => {
+		db.Producto.findAll({
+			where: {
+				category: "destacado"
+			}
 		}
+		)
+			.then(function (products) {
+				console.log(products)
+				res.render("productsNuevos.ejs", {
+					userLogged: req.session.usuarioLogueado,
+					products: products
+				})
+
+			})
+			.catch(function (er) {
+				console.log(er)
+			})
 	}
 }
 

@@ -27,10 +27,10 @@ router.get('/nuevo', productsController.filtrarNuevos);
 router.get('/destacado', productsController.filtrarDestacados);
 
 //Formulario para creacion de productos
-router.get('/create', upload.any(), productsController.create);  //usersMiddleware.auth
+router.get('/create', productsController.create);  //usersMiddleware.auth
 
 //Creacion de producto mediante formulario
-router.post('/create', productsController.store);
+router.post('/create', upload.any(), productsController.store);
 
 //formulario de edicion de productos
 router.get('/:id/edit',  productsController.editProd); //usersMiddleware.auth, upload.any(),

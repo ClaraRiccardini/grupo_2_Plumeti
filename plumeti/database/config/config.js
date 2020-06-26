@@ -3,10 +3,10 @@ module.exports = {
     "username": "root",
     "password": 'root',
     "database": "plumeti",
-    "host": "192.168.64.2",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false,
-    "port": "3306"
+    "port": "8889"
   },
   "test": {
     "username": "root",

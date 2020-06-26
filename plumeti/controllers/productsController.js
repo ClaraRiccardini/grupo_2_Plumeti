@@ -60,17 +60,20 @@ const controller = {
 	},
 	// Update - Method to update
 	store: function (req, res) {
-		console.log(req.body)
-		console.log(req.body.name)
-        db.Producto.create({
-            name: req.body.name,
+		
+		let newProduct = {
+			name: req.body.name,
             description: req.body.description,
             stock: req.body.stock,
             price: req.body.price,
-            medidas: req.body.medidas
-        })
+			medidas: req.body.medidas
+		}
+		
+		console.log(newProduct)
 
-        res.redirect("/home")
+        db.Producto.create(newProduct)
+
+        res.redirect("/products/create")
     },	
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
@@ -81,7 +84,7 @@ const controller = {
 			}
 		})
 			.then(function (result) {
-				res.redirect('/admproducts')
+				res.redirect('/products/create')
 			})
 			.catch(function (error) {
 				console.log(error)
@@ -106,10 +109,7 @@ const controller = {
 			}
 		})
 			.then(function (result) {
-				res.render("admproducts", {
-					userLogged: req.session.usuarioLogueado,
-					products: result
-				})
+				res.redirect('/products/create')
 			})
 			.catch(function (error) {
 				console.log(error)

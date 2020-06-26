@@ -22,9 +22,8 @@
 <body>
 
     <%- include('partials/navbar.ejs',{userLogged}) %>
-
-
     <div class="relleno"></div>
+
     <div class="container py-5">
         <div class="row pb-2">
             <h2 class="col-12">Agregar Producto</h2>
@@ -33,38 +32,36 @@
         <form action="/products/create" method="POST" enctype="multipart/form-data">
 
             <div class="row pb-2" id="img-agregar-productos">
+
                 <div class="col-sm-12 col-md-4 imgproductos pb-2">
-
-                    <input type="file" name="img" class="w-100 border shadow img">
-
-
+                    <input type="file" name="img1" class="w-100 border shadow img">
                 </div>
+
                 <div class="col-sm-12 col-md-4 imgproductos pb-2">
-
-                    <input type="file" name="img" class="w-100 border shadow img">
-
-
+                    <input type="file" name="img2" class="w-100 border shadow img">
                 </div>
+
                 <div class="col-sm-12 col-md-4 imgproductos pb-2">
-
-                    <input type="file" name="img" class="w-100 border shadow img">
-
-
+                    <input type="file" name="img3" class="w-100 border shadow img">
                 </div>
             </div>
 
             <div class="row pb-2 input-agregar-producto">
                 <input type="text" placeholder="Nombre" name="name" class="col-10 offset-1">
             </div>
+
             <div class="row pb-2 input-agregar-producto">
                 <input type="text" placeholder="Descripcion" name="description" class="col-10 offset-1">
             </div>
+
             <div class="row pb-2 input-agregar-producto">
                 <input type="text" placeholder="Precio" name="price" class="col-10 offset-1">
             </div>
+
             <div class="row pb-2 input-agregar-producto">
                 <input type="text" placeholder="Stock" name="stock" class="col-10 offset-1">
             </div>
+
             <div class="row pb-2 input-agregar-producto">
                 <input type="text" placeholder="Dimensiones" name="medidas" class="col-10 offset-1">
             </div>
@@ -100,8 +97,7 @@
         <div class="row mt-5 py-3" id="stock">
             <div class=" col-6 d-flex align-items-center">
                 <span>
-                    <img class="pr-3 d-none d-lg-block" src="/images/<%=products[i].img1%>"
-                        alt="">
+                    <img class="pr-3 d-none d-lg-block" src="/images/<%=products[i].img1%>" alt="">
                 </span>
                 <%=products[i].name%>
             </div>
@@ -112,9 +108,9 @@
                     <i class="fas fa-edit "></i>
                 </a>
 
-					<form action="/products/<%=products[i].id%>?_method=DELETE" method="POST">
-						<button class="trash" type="submit"><i class="fas fa-trash"></i></button>
-					</form>
+                <form action="/products/<%=products[i].id%>?_method=DELETE" method="POST">
+                    <button class="trash" type="submit"><i class="fas fa-trash"></i></button>
+                </form>
 
             </div>
         </div>
@@ -133,5 +129,3 @@
 </body>
 
 </html>
-
-

@@ -5,37 +5,26 @@ const bcrypt = require('bcryptjs');
 const db = require("../database/models");
 let sequelize = db.sequelize
 
-
 const controller = {
   root: (req, res) => {
-    db.Producto.findAll({
-      where:{ 
-       category:"nuevo"
-      }
-    })
-    console.log(nuevo)
-      .then((nuevo) => {
-        db.Producto.findAll({
-          where:{
-            category:"destacado"
-          }
+    db.Producto.findAll()
+      .then(products => {
+
+        let destacado = products.filter(prod => {
+          return prod.category == 'destacado'
         })
-        console.log(destacado)
-      })
-      .then((destacado) => {
+
+        let nuevo = products.filter(prod => {
+          return prod.category == 'nuevo'
+        })
+
         res.render("home", {
           userLogged: req.session.usuarioLogueado,
           nuevo: nuevo,
           destacado: destacado,
-
-        }
-        )
-      }
-      
-    )}
-
-
-
+        })
+      })
+  }
 }
 
 module.exports = controller;

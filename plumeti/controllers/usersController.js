@@ -35,29 +35,28 @@ const controller = {
 
         var errors = validationResult(req);
         if (errors.isEmpty()) {
-            console.log(User)
+
             console.log(req.body)
-        db.User.create({
-                nombre: req.body.nombre,
-                usuario: req.body.usuario,
-                contrasenia: req.body.contrasenia,
-                email: req.body.email
-            });
-            //console.log(dest)
-            res.redirect('/')
-        } else {
-            res.render('register', {
-                errors: errors.errors
-            })
+
+            req.session.usuarioLogueado = nuevoUsuario
+            //res.redirect('/home')
+            res.send(req.session.usuarioLogueado)
+
         }
+
+
     },
-        login: function (req, res, next) {
+    login: function (req, res, next) {
         res.render('login', {
             userLogged: req.session.usuarioLogueado
         })
     },
     processLogin: function (req, res) {
-        let { check, validationResult, body } = require('express-validator');
+        let {
+            check,
+            validationResult,
+            body
+        } = require('express-validator');
 
         var errors = validationResult(req);
 
@@ -75,16 +74,18 @@ const controller = {
 
             if (usuarioALoguearse == undefined) {
                 return res.render('login', {
-                    errors: [
-                        { msg: 'Credenciales inválidas' }
-                    ],
+                    errors: [{
+                        msg: 'Credenciales inválidas'
+                    }],
                     userLogged: req.session.usuarioLogueado
                 })
             }
 
 
             let destacado = products.filter(function (prod) {
-                if (prod.category == "destacado") { return prod }
+                if (prod.category == "destacado") {
+                    return prod
+                }
             })
             let nuevo = products.filter(function (prod) {
                 return prod.category == 'nuevo'
@@ -97,7 +98,9 @@ const controller = {
             let tiempoExpiracion = 60 * 1000 * 1000 * 1000 * 1000;
 
             if (req.body.recordame != undefined) {
-                res.cookie('recordame', usuarioALoguearse.id, { maxAge: tiempoExpiracion })
+                res.cookie('recordame', usuarioALoguearse.id, {
+                    maxAge: tiempoExpiracion
+                })
             }
 
 
@@ -113,26 +116,9 @@ const controller = {
         }
     },
     logout: function (req, res) {
-        let destacado = products.filter(function (prod) {
-            if (prod.category == "destacado") { return prod }
-        })
-        let nuevo = products.filter(function (prod) {
-            return prod.category == 'nuevo'
-        })
         req.session.usuarioLogueado = undefined
-
-            res.render('home', {
-                destacado: destacado,
-                nuevo: nuevo,
-                userLogged: undefined,
-                loggedUser: undefined,
-                usuarioLogueado: undefined,
-                usuarioaLoguearse: undefined,
-
-            })
+        res.redirect('/home')
     }
 };
 
 module.exports = controller;
-
-

@@ -23,7 +23,7 @@ router.post('/register',  [
     check('usuario').isLength({min:1}).withMessage('El nombre es obligatorio'),
     check('contrasenia').isLength({min:6}).withMessage('La contraseña debe tener almenos 6 caracteres'),
     check('email').isEmail().withMessage('El email es obligatorio')
-], users.creatUser);
+], users.creatUser); 
 
 router.get('/logout', users.logout)
 

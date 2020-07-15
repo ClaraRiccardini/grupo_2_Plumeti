@@ -1,13 +1,14 @@
 module.exports = {
-  "development": {
-    "username": "root",
-    "password": 'root',
-    "database": "plumeti",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false,
-    "port": "8889"
-  },
+  
+    "development": {
+      "username": "root",
+      "password": 'root',
+      "database": "plumeti",
+      "host": "192.168.64.2",
+      "dialect": "mysql",
+      "operatorsAliases": false,
+      "port": "3306"
+    },
   "test": {
     "username": "root",
     "password": null,

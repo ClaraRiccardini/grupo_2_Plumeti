@@ -1,47 +1,99 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
-
+const db = require("../database/models");
+let sequelize = db.sequelize
 
 const controller = {
-    root: (req, res) => {
-		res.render("cart.ejs", {
-			products : products,
-			userLogged: req.session.usuarioLogueado
-		})
-	},
+	root: (req, res) => {
+		db.Cart.findOne(
+			{
+				where: { user_id: req.session.usuarioALoguearse.id },
+				include: ["productos"]
+			}
 
-	contador: function(req, res, next) {
-		let numero = 0;
-		req.session.numero = numero;
-		res.render("cart.ejs", {
-			contador:numero,
-			userLogged: req.session.usuarioLogueado
-		})
-	},
-	sumar1: function(req, res, next) {
-		let numero = "";
-		if(typeof req.session.numero != "undefined")
-		{numero = req.session.numero}
-		else{numero = 0}
-		numero++
-		req.session.numero =numero
-		res.render("cart.ejs",{
-			contador:numero,
-			userLogged: req.session.usuarioLogueado
-		})
-	},
-	destroy: (req, res) => {   
-		let productsQueQuedan = products.filter(function(element){
-		return element.id != req.params.id
-	})
+		)
+			.then(function (products) {
+				if(products != undefined){
+				let numeros = [];
+				
+				for (var i = 0; i < products.productos.length; i++) {
 
-	let productosModificadosJSON = JSON.stringify(products)
-	fs.writeFileSync(productsFilePath,productosModificadosJSON)
-	res.send(productsQueQuedan)
-},
+					numeros.push(products.productos[i].price)
+				}
+				let totalPrice;
+				let numero
+				if (numeros === []){
+					return totalPrice = 0
+				}else{
+					numero = 0
+					products.productos.forEach (result => {
+   					numero += result.price
+					});
+				};
+
+				//console.log(req.session.usuarioALoguearse)
+				//console.log(totalPrice)
+
+				console.log("aca viene los products")
+				console.log(products.productos)
+				res.render("cart.ejs", {
+					userLogged: req.session.usuarioALoguearse,
+					products: products.productos,
+					totalPrice: numero
+				})}else{
+					res.render("cart", {
+						userLogged:req.session.usuarioALoguearse,
+						products: undefined,
+						totalPrice: undefined
+						
+					})
+				}
+
+			})
+			.catch(function (er) {
+				console.log(er)
+			})
+	},
+	add: function (req, res, next) {
+
+		//console.log(req.session.usuarioALoguearse.id)
+
+		db.Cart.findAll({
+
+		where: { user_id: req.session.usuarioALoguearse.id }
+		}).then(function (result) {
+
+			db.Cart_product.create(
+				{
+					product_id: req.body.id,
+					cart_id: result[0].id
+				})
+		}
+		).then(
+			res.redirect("/cart")
+		)
+
+	},
+	delete: function (req, res, next) {
+		db.Cart.findAll({
+			where: {user_id: req.session.usuarioALoguearse.id }
+		}).then(function (result) {
+			db.Cart_product.destroy({
+				where: {
+					product_id: req.params.id
+				}
+			})
+				.then(function (result) {
+					res.redirect('/cart')
+				})
+				.catch(function (error) {
+					console.log(error)
+				})
+
+		}
+		)
+	}
 }
 
 

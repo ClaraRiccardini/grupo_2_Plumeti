@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
 
-    <title>Home</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -40,13 +40,14 @@
                 <% } %>
             </ul>
         <% } %>
-
+        <div id ="validacion"></div>
         <form class="form-login col-lg-3 col-md-6 col-sm-12 text-center" action="/users/login" method="POST">
 
-            <input class="login" type="text" placeholder="Usuario" name="usuario">
+            <input id="user" class="login" type="text" placeholder="Usuario" name="user">
 
-            <input class="login" type="password" placeholder="Contraseña" name="contrasenia">
+            <input id="password" class="login" type="password" placeholder="Contraseña" name="password">
             <div class="inner-form-recordame">
+
                 <input type="checkbox" id="recordame" name="recordame">
                 <label for="recordame">Recordame</label>
             </div>
@@ -68,7 +69,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-
+<script src="/js/login.js"></script>
 
 </body>
 

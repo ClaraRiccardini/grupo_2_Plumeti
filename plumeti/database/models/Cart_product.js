@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataType) => {
-    const cart_product = sequelize.define(
+  module.exports = (sequelize, DataType) => {
+    const Cart_product = sequelize.define(
         'Cart_product',
         {
             id: {
@@ -16,8 +16,9 @@ module.exports = (sequelize, DataType) => {
         },
         {
             tableName: 'cart_product',
-            timestamps: false
+            timestamps: false,
+            "underscored": true
         }
     )
-    return cart_product
+    return Cart_product
 }

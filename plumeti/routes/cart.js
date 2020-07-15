@@ -16,10 +16,11 @@ var storage = multer.diskStorage({
 var upload = multer({storage:storage});
 
 router.get('/', cartController.root);
-router.get('/', cartController.contador);
-router.get('/', cartController.sumar1);
+router.post('/', cartController.add)
+router.delete('/delete/:id', cartController.delete)
+
 
 //Eliminar producto 
-router.delete('/delete/:id', upload.any(),cartController.destroy); /* DELETE - Delete from DB */
+//router.delete('/delete/:id', upload.any(),cartController.destroy); /* DELETE - Delete from DB */
 
 module.exports = router;

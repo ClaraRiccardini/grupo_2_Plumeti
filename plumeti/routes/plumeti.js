@@ -4,6 +4,7 @@ var main = require('../controllers/mainController')
 
 /* GET home page. */
 router.get('/', main.root);
+router.get("/how", main.how);
 router.get('/home', main.root);
 
 

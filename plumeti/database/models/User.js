@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const user = sequelize.define(
+    const User = sequelize.define(
         'User',
         {
             id: {
@@ -28,5 +28,5 @@ module.exports = (sequelize, DataType) => {
             timestamps: false
         }
     )
-    return user
+    return User
 }

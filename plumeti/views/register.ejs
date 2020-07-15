@@ -25,44 +25,37 @@
     <div class="container register-container py-5">
 
         <% if( typeof errors != 'undefined'){ %>
-            <ul>
-                <% for(var i = 0; i < errors.length; i++){ %>
-                    <li><%= errors[i].msg %></li>
-                <% } %>
-            </ul>
+        <ul>
+            <% for(var i = 0; i < errors.length; i++){ %>
+            <li><%= errors[i].msg %></li>
+            <% } %>
+        </ul>
         <% } %>
-                <form action="/users/register" method="POST" class="py-5 form-register">
-                    
-                    <input type="text" name="nombre" placeholder="Nombre">
+        <div id="validacion"><ul></ul></div>
+        <form action="/users/register" method="POST" class="py-5 form-register">
 
-                    
-                    <input type="text" name="usuario" placeholder="Usuario">
+            <input id="name" type="text" name="name" placeholder="Nombre">
+            <input id="user" type="text" name="user" placeholder="Usuario">
+            <input id="email" type="email" name="email" placeholder="Email">
+            <input id="password" type="password" name="password" placeholder="Contraseña">
+            <button type="submit">Crear cuenta</button>
 
-                    <input type="email" name="email" placeholder="Email">
-                    
-                    <input type="password" name="contrasenia" placeholder="Contraseña">
-
-                    
-
-
-                    <button type="submit">Crear cuenta</button>
-                    
-                </form>
-            </div>
+        </form>
+    </div>
 
 
     <%- include('partials/footer.ejs') %>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-
+        </script>
+<script src="/js/register.js"></script>
 
 </body>
 

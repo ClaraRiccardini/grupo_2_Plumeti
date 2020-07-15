@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <link rel="stylesheet" href="/stylesheets/detail.css">
-    <title>Detail</title>
+    <title>Detalle de producto</title>
 </head>
 
 <body>
@@ -70,9 +70,11 @@
                 <div class="right">
                     <h2 class="text-center my-3"><%=prod.name%></h2>
                     <h2 class="text-center my-3">$<%=prod.price%></h2>
+                    <br>
                     <p class="text-center my-3"><%=prod.description%><br>
                         <%=prod.composicion%><br>
                         <%=prod.medidas%> cms<br>
+                        <br>
                         <div id="aclaracion">Aclaración: <%=prod.aclaracion%></div>
                     </p>
                 </div>
@@ -81,16 +83,16 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-1 col-sm-0 product mt-2">
+            <div class="col-lg-5 col-md-1 col-sm-0 product mt-2">
 
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-6 product mt-2">
-                <button id="boton" type="button" class="btn btn-dark"><a href="/cart" class="nav-link">Comprar
-                        ahora</a></button>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-6 product mt-2">
-                <button id="boton" type="button" class="btn btn-dark"><a href="/cart" class="nav-link">Agregar al
-                        carrito</a></button>
+            <div class="col-lg-7 col-md-5 col-sm-12 product mt-2">
+                <form action="/cart" method="POST">
+                    <input type="hidden" name="id" value="<%=prod.id%>">
+                    <button id="boton" type="submit" class="btn btn-dark">
+                        Agregar al carrito</a>
+                    </button>
+                </form>
             </div>
             <div class="col-lg-0 col-md-1 col-sm-0 product mt-2">
 
@@ -109,7 +111,8 @@
         <form>
             <div class="form-group">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                    placeholder="Dejanos tu comentario!" type="text" name="pregunta" action="/detail/<%=prod.id%>" method="POST"></textarea>
+                    placeholder="Dejanos tu comentario!" type="text" name="pregunta" action="/detail/<%=prod.id%>"
+                    method="POST"></textarea>
             </div>
             <button>Enviar</button>
         </form>
@@ -128,18 +131,18 @@
 
 
 
-        <%- include('partials/footer.ejs') %>
-        </main>
-        <!-- Hoja de estilo para el footer footer.css -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+    <%- include('partials/footer.ejs') %>
+    </main>
+    <!-- Hoja de estilo para el footer footer.css -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

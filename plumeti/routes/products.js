@@ -1,4 +1,5 @@
 var express = require('express');
+const path = require('path');
 var router = express.Router();
 const multer = require('multer');
 var usersMiddleware = require('../middlewares/usersMiddleware')
@@ -7,7 +8,7 @@ var productsController = require('../controllers/productsController');
 
 var storage = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'public/img/avatars');
+        cb(null,'public/images/products/');
     },
     filename:(req,file,cb)=>{
         cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));

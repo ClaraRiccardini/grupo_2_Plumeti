@@ -13,12 +13,12 @@ const controller = {
 	// Root - Show all products
 	root: (req, res) => {
 
-		db.Producto.findAll()
+		db.Product.findAll()
 			.then(function (result) {
 				let algo = result;
-
+				//console.log(req.session.usuarioLogueado)
 				res.render("products.ejs", {
-					userLogged: req.session.usuarioLogueado,
+					userLogged: req.session.usuarioALoguearse,
 					products: algo
 				})
 
@@ -29,11 +29,11 @@ const controller = {
 	},
 	// Detail - Detail from one product
 	detail: function (req, res) {
-		db.Producto.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id)
 			.then(function (prod) {
 				if (prod) {
 					res.render("detail.ejs", {
-						userLogged: req.session.usuarioLogueado,
+						userLogged: req.session.usuarioALoguearse,
 						prod: prod,
 						comments: comments
 					})
@@ -46,11 +46,11 @@ const controller = {
 	},
 	// Create -  Method to store
 	create: function (req, res, next) {
-		db.Producto.findAll()
+		db.Product.findAll()
 			.then(function (result) {
 
 				res.render("admproducts", {
-					userLogged: req.session.usuarioLogueado,
+					userLogged: req.session.usuarioALoguearse,
 					products: result
 				})
 			})
@@ -66,19 +66,23 @@ const controller = {
             description: req.body.description,
             stock: req.body.stock,
             price: req.body.price,
-			medidas: req.body.medidas
+			medidas: req.body.medidas,
+			img1: req.files[0].filename,
+			img2: req.files[1].filename,
+			img3: req.files[2].filename
+
 		}
 		
-		console.log(newProduct)
+		//console.log(newProduct)
 
-        db.Producto.create(newProduct)
+        db.Product.create(newProduct)
 
         res.redirect("/products/create")
     },	
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
 
-		db.Producto.destroy({
+		db.Product.destroy({
 			where: {
 				id: req.params.id
 			}
@@ -92,8 +96,8 @@ const controller = {
 	},
 	// Update - Method to update
 	update: function (req, res, next) {
-		console.log(req.body)
-		db.Producto.update({
+		//console.log(req.body)
+		db.Product.update({
 			name: req.body.nombre,
 			stock: req.body.stock,
 			price: req.body.precio,
@@ -115,32 +119,31 @@ const controller = {
 				console.log(error)
 			})
 
-
-
 	},
 	editProd: function (req, res, next) {
 
-		db.Producto.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id)
 			.then(function (result) {
 				console.log(result.name)
 
 				res.render('form-edit-prod', {
 					product: result,
-					userLogged: req.session.usuarioLogueado
+					userLogged: req.session.usuarioALoguearse
 				})
 			})
 	},
-	filtrarNuevos: (req, res) => {
-		db.Producto.findAll({
+	filtrarNuevos: (req, res, next) => {
+		db.Product.findAll({
 			where: {
 				category: "nuevo"
 			}
 		}
 		)
 			.then(function (products) {
-				console.log(products)
+				
+				//console.log(products)
 				res.render("productsNuevos.ejs", {
-					userLogged: req.session.usuarioLogueado,
+					userLogged: req.session.usuarioALoguearse,
 					products: products
 				})
 
@@ -149,18 +152,17 @@ const controller = {
 				console.log(er)
 			})
 	},
-
 	filtrarDestacados: (req, res) => {
-		db.Producto.findAll({
+		db.Product.findAll({
 			where: {
 				category: "destacado"
 			}
 		}
 		)
 			.then(function (products) {
-				console.log(products)
+				//console.log(products)
 				res.render("productsNuevos.ejs", {
-					userLogged: req.session.usuarioLogueado,
+					userLogged: req.session.usuarioALoguearse,
 					products: products
 				})
 

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const cart = sequelize.define(
+    const Cart = sequelize.define(
         'Cart',
         {
             id: {
@@ -16,8 +16,18 @@ module.exports = (sequelize, DataType) => {
         },
         {
             tableName: 'cart',
-            timestamps: false
+            timestamps: false,
+            "underscored": true
         }
     )
-    return cart
+    Cart.associate = function(models){
+        Cart.belongsToMany(models.Product, {
+            as: "productos",
+            through: "cart_product",
+            foreign_key: "cart_id",
+            otherKey: "product_id",
+            timestamps: false
+        })
+    }
+    return Cart
 }

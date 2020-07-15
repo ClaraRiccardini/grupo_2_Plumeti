@@ -36,14 +36,33 @@
 
                 <div class="left d-flex flex-column align-items-center text-center m-auto">
         
-                    <div class="foto-perfil mt-5 mb-3"></div>
+                    <form class="formAvatar" action="/profile" method="POST" enctype="multipart/form-data">
+                    
+                        <div class="foto-perfil mt-5 mb-3" >
+                     
+
+                            <% if (userLogged.avatar == null){%>
+                                <img class="avatar" id="avatarId" src="" alt="">
+                                <input id="avatar" type="file" name="file" placeholder="" value=""/>
+                                <button id="botonAvatar" type="submit">Cargar</button>
+                            <% } else { %>
+                                <img class="avatar" id="avatarId" src="/images/avatars/<%= userLogged.avatar %>" alt="">
+                                <% } %>
+
+
+                        </div>
+
+                        
+                    </form>
+                    
         
                     <nav class="nav-profile">
                         <ul>
                             <li><a href="/profile/personal-data">Datos Personales</a></li>
                             <li><a href="/profile/record">Historial de compras</a></li>
                             <li><a href="/profile/password">Contraseñas</a></li>
-                            <form action="/users/logout" method="GET">
+
+                        <form action="/users/logout" method="GET">
                                 <button id="botonLogout" type="submit">
                                     Cerrar sesión
                                 </button>

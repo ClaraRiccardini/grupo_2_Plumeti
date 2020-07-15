@@ -7,7 +7,7 @@ let sequelize = db.sequelize
 
 const controller = {
   root: (req, res) => {
-    db.Producto.findAll()
+    db.Product.findAll()
       .then(products => {
 
         let destacado = products.filter(prod => {
@@ -19,11 +19,15 @@ const controller = {
         })
 
         res.render("home", {
-          userLogged: req.session.usuarioLogueado,
+          userLogged: req.session.usuarioALoguearse,
           nuevo: nuevo,
           destacado: destacado,
         })
       })
+
+  },
+  how: (req,res) => {
+    res.render("howTo", {userLogged: req.session.usuarioALoguearse})
   }
 }
 

@@ -16,16 +16,15 @@
     <link rel="stylesheet" href="/stylesheets/profile-personal-data.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
 
-    <title>Home</title>
+    <title>Perfil</title>
 </head>
 <body>
-
     <%- include('partials/navbar.ejs',{userLogged}) %>
 
     <div class="container-fluid">
         <div class="row">
 
-            <%- include('partials/profile-left.ejs') %>
+            <%- include('partials/profile-left.ejs',{userLogged})  %>
 
             <div class="col-lg-9 col-sm-12 p-5" id="right">
                 <div class="right">
@@ -40,7 +39,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text basic-addon1"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="<%=userLogged.nombre%>" aria-label="Nombre y apellido" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="<%= userLogged.name %>" aria-label="Nombre y apellido" aria-describedby="basic-addon1">
                           </div>
                         </div>
 
@@ -50,7 +49,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text basic-addon1"><i class="fas fa-id-card"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Documento" aria-label="Documento" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="<%= userLogged.user %>" aria-label="user" aria-describedby="basic-addon1">
                               </div>
                         </div>
                     </div>
@@ -63,22 +62,11 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text basic-addon1"><i class="fas fa-envelope"></i></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="<%=userLogged.email%>" aria-label="Correo" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="<%= userLogged.email %>" aria-label="Correo" aria-describedby="basic-addon1">
                               </div>
                         </div>
 
 
-                        <div class="col-sm-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text basic-addon1">
-                                        <i class="fas fa-phone"></i>
-                                    </span>
-                                </div>
-
-                                <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="basic-addon1">
-                              </div>
-                        </div>
                     </div>
 
 
@@ -171,7 +159,8 @@
     </div>
 
 
-
+    <script src="/js/jquery.js"></script>
+    <script src="/js/newReader.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

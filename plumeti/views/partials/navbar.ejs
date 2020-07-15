@@ -8,7 +8,7 @@
 
         <div class="collapse navbar-collapse" id="menu">
 
-            <input class="form-control " type="text" placeholder="Buscar" aria-label="Search">
+            <input class="form-control w-25" type="text" placeholder="Buscar" aria-label="Search">
 
 
             <ul class="navbar-nav ml-auto">
@@ -19,7 +19,11 @@
                 <% if(userLogged != undefined){ %>
 
                 <li class="navbar-item mx-1">
-                    <a href="/profile" class="nav-link">Hola <%=userLogged.nombre%></a>
+                    <a href="/profile" class="nav-link">Hola <%=userLogged.name%></a>
+                </li>
+
+                <li class="navbar-item mx-1">
+                    <a href="/how" class="nav-link">Cómo?</a>
                 </li>
 
                 <li class="navbar-item mx-1">

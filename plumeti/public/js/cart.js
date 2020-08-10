@@ -1,6 +1,10 @@
 window.addEventListener('load', function () {
 
     let botonFinalizar = document.querySelector("#botonFinalizar")
+    botonFinalizar.addEventListener("click", function () {
+        alert("Gracias por comprar en Plumeti!")
+                })
+        
 
     let cantidad = document.querySelectorAll(".cantidad")
     let mas = document.querySelectorAll(".mas")
@@ -52,10 +56,7 @@ var totalFinal = 0
    })
    console.log(parseInt(totalFinal))
    total.innerHTML = totalFinal
-        botonFinalizar.addEventListener("click", function () {
-            let mensaje = alert("Gracias por comprar en Plumeti!")
-        })
-
+        
 
     })
 });

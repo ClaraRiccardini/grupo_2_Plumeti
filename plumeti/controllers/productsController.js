@@ -60,6 +60,7 @@ const controller = {
 	},
 	// Update - Method to update
 	store: function (req, res) {
+		console.log(req.body)
 		
 		let newProduct = {
 			name: req.body.name,
@@ -69,7 +70,8 @@ const controller = {
 			medidas: req.body.medidas,
 			img1: req.files[0].filename,
 			img2: req.files[1].filename,
-			img3: req.files[2].filename
+			img3: req.files[2].filename,
+			category: "nuevo"
 
 		}
 		

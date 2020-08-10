@@ -31,6 +31,7 @@ const controller = {
                 user: req.body.user,
                 password: req.body.password, 
                 email: req.body.email
+                
             };
 
             console.log(newUser)

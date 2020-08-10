@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100 m-0 shadow">
     <div class="container">
         <div class="navbar-brand mr-5">
-            <img src="/images/logo.svg" height="40px" alt="">
+            
+            <a href="/home" class="nav-link"><img src="/images/logo.svg" height="40px" alt=""></a>
         </div>
 
         <i class="fas fa-bars navbar-toggler" data-target="#menu" data-toggle="collapse" type="button"></i>
@@ -12,14 +13,12 @@
 
 
             <ul class="navbar-nav ml-auto">
-                <li class="navbar-item mx-1">
-                    <a href="/home" class="nav-link">Inicio</a>
-                </li>
+              
 
                 <% if(userLogged != undefined){ %>
 
                 <li class="navbar-item mx-1">
-                    <a href="/profile" class="nav-link">Hola <%=userLogged.name%></a>
+                    <a href="/profile" class="nav-link">Perfil</a>
                 </li>
 
                 <li class="navbar-item mx-1">
@@ -28,6 +27,9 @@
 
                 <li class="navbar-item mx-1">
                     <a href="/products" class="nav-link">Productos</a>
+                </li>
+                <li class="navbar-item mx-1">
+                    <a href="/products/create" class="nav-link">Admin </a>
                 </li>
                 <li class="navbar-item mx-1">
                     <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>

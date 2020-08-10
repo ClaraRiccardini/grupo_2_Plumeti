@@ -45,7 +45,7 @@
             <div class="row my-5">
                 <% for(var i = 0; i < destacado.length; i++){ %>
                     <a href="/products/detail/<%= destacado[i].id %>" class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                            <img class="w-100" src="/images/<%= destacado[i].img1 %>" alt="">
+                            <img class="w-100" src="/images/products/<%= destacado[i].img1 %>" alt="">
                             <h3 class="px-3 my-2 text-center"><%= destacado[i].name %></h3>
                             <p class="text-center px-3">$<%= destacado[i].price %></p>
                     </a>
@@ -60,7 +60,7 @@
                 
                 <% for(var i = 0; i < nuevo.length; i++){ %>
                     <a href="/products/detail/<%= nuevo[i].id %>" class="producto col-lg-3 col-md-6 col-sm-12 mt-5 position-relative">
-                            <img class="w-100" src="/images/<%= nuevo[i].img1 %>" alt="">
+                            <img class="w-100" src="/images/products/<%= nuevo[i].img1 %>" alt="">
                             <h3 class="px-3 my-2 text-center"><%= nuevo[i].name %></h3>
                             <p class="text-center px-3">$<%= nuevo[i].price %></p>
                     </a>
